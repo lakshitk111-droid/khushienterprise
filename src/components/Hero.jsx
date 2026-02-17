@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import Button from './ui/Button';
 
 const Hero = () => {
   return (
@@ -49,18 +49,12 @@ const Hero = () => {
           transition={{ delay: 1.4, duration: 0.8 }}
           className="flex flex-col sm:flex-row gap-4"
         >
-          <Link 
-            to="/book-repair" 
-            className="px-8 py-4 bg-primary hover:bg-primary-light text-white rounded-full font-medium transition-all transform hover:scale-105 shadow-lg shadow-primary/30"
-          >
+          <Button href="/book-repair" variant="primary" size="lg">
             Book a Repair
-          </Link>
-          <Link 
-            to="/spare-parts" 
-            className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/30 rounded-full font-medium transition-all transform hover:scale-105"
-          >
+          </Button>
+          <Button href="/spare-parts" variant="glass" size="lg">
             Explore Parts
-          </Link>
+          </Button>
         </motion.div>
       </div>
 

@@ -1,77 +1,130 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import footerBg from '../assets/footer.jpg';
 
 const Footer = () => {
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = () => {
+    if (email) {
+      alert('Thank you for subscribing to our newsletter!');
+      setEmail('');
+    } else {
+      alert('Please enter your email address.');
+    }
+  };
+
+  const getLinkPath = (item) => {
+    if (item === 'Home') return '/';
+    if (item === 'About Us') return '/about';
+    return `/${item.toLowerCase().replace(' ', '-')}`;
+  };
+
   return (
-    <footer className="bg-secondary text-white pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-          {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-white">LaptopCare</h3>
-            <p className="text-gray-400 text-sm leading-relaxed">
+    <footer className="relative overflow-hidden bg-[#1a1a1a] text-gray-300 pt-20 pb-10 border-t-4 border-primary">
+      {/* Background Image Layer */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${footerBg})` }}
+      />
+      
+      {/* Overlay Layer */}
+      <div className="absolute inset-0 z-10 bg-black/80"></div>
+
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
+          {/* Brand Column */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-white tracking-tight">LaptopCare</h3>
+            <p className="text-gray-400 text-sm leading-loose font-light max-w-xs">
               Premium laptop repair services and authentic spare parts. 
-              We bring your devices back to life with professional care and expertise.
+              Restoring your digital companions with precision and care.
             </p>
-            <div className="flex space-x-4 pt-2">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors"><Linkedin size={20} /></a>
+            <div className="flex space-x-5 pt-2">
+              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Facebook size={18} /></a>
+              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Twitter size={18} /></a>
+              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Instagram size={18} /></a>
+              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Linkedin size={18} /></a>
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><Link to="/" className="text-gray-400 hover:text-white transition-colors text-sm">Home</Link></li>
-              <li><Link to="/about" className="text-gray-400 hover:text-white transition-colors text-sm">About Us</Link></li>
-              <li><Link to="/services" className="text-gray-400 hover:text-white transition-colors text-sm">Services</Link></li>
-              <li><Link to="/spare-parts" className="text-gray-400 hover:text-white transition-colors text-sm">Spare Parts</Link></li>
-              <li><Link to="/contact" className="text-gray-400 hover:text-white transition-colors text-sm">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Our Services</h4>
-            <ul className="space-y-3">
-              <li className="text-gray-400 text-sm">Screen Replacement</li>
-              <li className="text-gray-400 text-sm">Battery Replacement</li>
-              <li className="text-gray-400 text-sm">Motherboard Repair</li>
-              <li className="text-gray-400 text-sm">Keyboard Replacement</li>
-              <li className="text-gray-400 text-sm">Data Recovery</li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6">Contact Us</h4>
+          {/* Quick Links Column */}
+          <div className="lg:pl-8">
+            <h4 className="text-white font-semibold mb-8 tracking-wide text-sm uppercase">Quick Links</h4>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-gray-400 text-sm">
-                <MapPin size={18} className="mt-1 flex-shrink-0" />
-                <span>123 Tech Park, Cyber City,<br />Gurugram, Haryana 122002</span>
+              {['Home', 'About Us', 'Services', 'Spare Parts', 'Contact'].map((item) => (
+                <li key={item}>
+                  <Link 
+                    to={getLinkPath(item)} 
+                    className="text-gray-400 hover:text-white transition-colors text-sm flex items-center group w-fit"
+                  >
+                    <span className="w-0 group-hover:w-2 h-[1px] bg-primary mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services Column */}
+          <div>
+            <h4 className="text-white font-semibold mb-8 tracking-wide text-sm uppercase">Our Expertise</h4>
+            <ul className="space-y-4">
+              {['Screen Replacement', 'Battery Replacement', 'Motherboard Repair', 'Data Recovery', 'Software Support'].map((item) => (
+                <li key={item} className="text-gray-400 text-sm hover:text-white transition-colors cursor-default w-fit">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact & Newsletter Column */}
+          <div>
+            <h4 className="text-white font-semibold mb-8 tracking-wide text-sm uppercase">Get in Touch</h4>
+            <ul className="space-y-4 mb-8">
+              <li className="flex items-start space-x-3 text-gray-400 text-sm font-light">
+                <MapPin size={16} className="mt-1 flex-shrink-0 text-primary" />
+                <span>123 Tech Park, Cyber City, Gurugram</span>
               </li>
-              <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                <Phone size={18} className="flex-shrink-0" />
+              <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
+                <Phone size={16} className="flex-shrink-0 text-primary" />
                 <span>+91 98765 43210</span>
               </li>
-              <li className="flex items-center space-x-3 text-gray-400 text-sm">
-                <Mail size={18} className="flex-shrink-0" />
+              <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
+                <Mail size={16} className="flex-shrink-0 text-primary" />
                 <span>support@laptopcare.com</span>
               </li>
             </ul>
+
+            <h5 className="text-white font-semibold mb-4 tracking-wide text-xs uppercase">Newsletter</h5>
+            <div className="relative">
+              <input 
+                type="email" 
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email address" 
+                className="w-full bg-white/5 border border-gray-700 text-white px-4 py-3 rounded-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary text-sm transition-all placeholder:text-gray-600"
+              />
+              <button 
+                onClick={handleSubscribe}
+                className="absolute right-2 top-1.5 bg-primary text-white p-1.5 rounded-md hover:bg-primary-light transition-colors shadow-lg"
+              >
+                <ArrowRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-500 text-sm">
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <p className="text-gray-500 text-xs font-light tracking-wide">
             © {new Date().getFullYear()} LaptopCare. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-500 text-sm hover:text-white">Privacy Policy</a>
-            <a href="#" className="text-gray-500 text-sm hover:text-white">Terms of Service</a>
+          <div className="flex space-x-8">
+            <a href="#" className="text-gray-500 text-xs hover:text-white transition-colors font-light">Privacy Policy</a>
+            <a href="#" className="text-gray-500 text-xs hover:text-white transition-colors font-light">Terms of Service</a>
+            <a href="#" className="text-gray-500 text-xs hover:text-white transition-colors font-light">Cookie Policy</a>
           </div>
         </div>
       </div>

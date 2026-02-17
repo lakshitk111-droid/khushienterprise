@@ -1,25 +1,38 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Wrench, ShieldCheck, Clock, CheckCircle } from 'lucide-react';
+import { ArrowRight, Wrench, ShieldCheck, Clock, CheckCircle, Activity, Zap, PenTool } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Hero from '../components/Hero';
+import TopBar from '../components/TopBar';
+import Features from '../components/Features';
+import Testimonials from '../components/Testimonials';
+import Gallery from '../components/Gallery';
+import MapSection from '../components/MapSection';
 import SectionWrapper, { FadeIn } from '../components/Animations';
+import Button from '../components/ui/Button';
+import SectionHeading from '../components/ui/SectionHeading';
+import PatternBackground from '../components/ui/PatternBackground';
+import ctaImg from '../assets/image2.jpg';
 
 const ServiceCard = ({ icon: Icon, title, description, delay }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
+    whileHover={{ y: -5 }}
     transition={{ duration: 0.5, delay }}
-    className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20"
+    className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 relative overflow-hidden"
   >
-    <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform translate-x-4 -translate-y-4">
+      <Icon size={80} />
+    </div>
+    <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
       <Icon size={28} className="text-primary group-hover:text-white transition-colors" />
     </div>
-    <h3 className="text-xl font-bold text-secondary mb-3">{title}</h3>
-    <p className="text-gray-500 leading-relaxed mb-6">{description}</p>
-    <Link to="/services" className="inline-flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform">
+    <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">{title}</h3>
+    <p className="text-gray-500 leading-relaxed mb-6 relative z-10">{description}</p>
+    <Link to="/services" className="inline-flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform relative z-10">
       Learn More <ArrowRight size={16} className="ml-2" />
     </Link>
   </motion.div>
@@ -28,23 +41,29 @@ const ServiceCard = ({ icon: Icon, title, description, delay }) => (
 const Home = () => {
   return (
     <div className="bg-gray-50 font-sans text-secondary overflow-x-hidden">
+      <TopBar />
       <Navbar />
       
       <Hero />
 
       {/* Services Preview Section */}
-      <SectionWrapper className="bg-white">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+      <SectionWrapper className="bg-white relative">
+        <PatternBackground variant="dots" className="text-gray-100" />
+        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
           <FadeIn>
-            <span className="text-primary font-semibold tracking-wider uppercase text-sm">Our Expertise</span>
-            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-6 text-secondary">Premium Repair Services</h2>
-            <p className="text-gray-500 text-lg">
+            <SectionHeading 
+              title="Premium Repair Services" 
+              subtitle="Our Expertise"
+              alignment="center"
+              variant="creative"
+            />
+            <p className="text-gray-500 text-lg mt-4">
               We specialize in diagnosing and fixing complex hardware and software issues with precision and care.
             </p>
           </FadeIn>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative z-10">
           <ServiceCard 
             icon={Wrench} 
             title="Hardware Repair" 
@@ -66,19 +85,21 @@ const Home = () => {
         </div>
       </SectionWrapper>
 
-      {/* About Section */}
-      <section className="py-20 md:py-28 bg-gray-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      {/* About Section - Left Image / Right Text */}
+      <SectionWrapper className="bg-gray-50 relative overflow-hidden">
+        <PatternBackground variant="grid" className="opacity-10" />
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <FadeIn direction="right" className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
+                <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
-                  alt="Technician working" 
+                  alt="Technician working on laptop repair" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
                 />
               </div>
-              <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-xl shadow-xl hidden md:block max-w-xs">
+              <div className="absolute -bottom-10 -left-10 bg-white p-8 rounded-xl shadow-xl hidden md:block max-w-xs border-l-4 border-primary z-20">
                 <div className="flex items-center space-x-4 mb-4">
                   <div className="p-3 bg-green-100 rounded-full text-green-600">
                     <CheckCircle size={24} />
@@ -95,10 +116,12 @@ const Home = () => {
             </FadeIn>
 
             <FadeIn direction="left">
-              <span className="text-primary font-semibold tracking-wider uppercase text-sm">About Us</span>
-              <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-8 text-secondary leading-tight">
-                More Than Just Repairs, <br/>It's Peace of Mind.
-              </h2>
+              <SectionHeading 
+                title="More Than Just Repairs" 
+                subtitle="About Us"
+                alignment="left"
+                variant="creative"
+              />
               <p className="text-gray-500 text-lg mb-6 leading-relaxed">
                 LaptopCare was born from a simple idea: technology should serve you, not stress you. 
                 We created a service where modern expertise meets old-school reliability.
@@ -107,43 +130,129 @@ const Home = () => {
                 Whether you're a creative professional needing a fast screen fix, or a business looking 
                 for reliable fleet maintenance, our certified technicians are here to help.
               </p>
-              <Link 
-                to="/about" 
-                className="px-8 py-4 bg-secondary text-white rounded-full font-medium hover:bg-secondary-light transition-colors inline-block"
+              <Button 
+                href="/about" 
+                variant="secondary"
+                size="lg"
               >
                 Read Our Story
-              </Link>
+              </Button>
             </FadeIn>
           </div>
+      </SectionWrapper>
+
+      {/* New Alternating Section - Right Image / Left Text */}
+      <SectionWrapper className="bg-white relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+          <FadeIn direction="right" className="order-2 lg:order-1">
+            <SectionHeading 
+              title="State-of-the-Art Diagnostics" 
+              subtitle="Precision Care"
+              alignment="left"
+              variant="creative"
+            />
+            <div className="space-y-6 mb-8">
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-blue-50 rounded-lg text-primary mt-1">
+                  <Activity size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">Advanced Testing Tools</h4>
+                  <p className="text-gray-500 leading-relaxed">We use industry-standard diagnostic software and hardware to pinpoint issues accurately.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-blue-50 rounded-lg text-primary mt-1">
+                  <Zap size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">ESD Safe Environment</h4>
+                  <p className="text-gray-500 leading-relaxed">Our lab is fully ESD-protected to prevent any static damage to your sensitive components.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="p-3 bg-blue-50 rounded-lg text-primary mt-1">
+                  <PenTool size={24} />
+                </div>
+                <div>
+                  <h4 className="font-bold text-lg mb-2">Detailed Reports</h4>
+                  <p className="text-gray-500 leading-relaxed">Receive a comprehensive report of your device's health before and after repair.</p>
+                </div>
+              </div>
+            </div>
+            <Button 
+              href="/services" 
+              variant="outline"
+              size="lg"
+            >
+              View Our Process
+            </Button>
+          </FadeIn>
+
+          <FadeIn direction="left" className="order-1 lg:order-2 relative">
+             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
+                <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                  alt="Advanced diagnostics lab" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  loading="lazy"
+                />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/10 rounded-full blur-2xl -z-10"></div>
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-secondary/10 rounded-full blur-2xl -z-10"></div>
+          </FadeIn>
+        </div>
+      </SectionWrapper>
+
+      {/* CTA Banner */}
+      <section className="relative min-h-[60vh] overflow-hidden flex items-center justify-center">
+        {/* Background Image Layer */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          style={{ backgroundImage: `url(${ctaImg})` }}
+        />
+        
+        {/* Overlay Layer */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Content Layer */}
+        <div className="relative z-20 w-full">
+          <SectionWrapper className="text-center text-white">
+            <FadeIn>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Restore Your Device?</h2>
+              <p className="text-white/90 text-xl mb-10 max-w-2xl mx-auto">
+                Book a repair today or browse our catalogue of premium spare parts.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button 
+                  href="/book-repair" 
+                  variant="white"
+                  size="lg"
+                >
+                  Book Now
+                </Button>
+                <Button 
+                  href="/contact" 
+                  variant="outlineWhite"
+                  size="lg"
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </FadeIn>
+          </SectionWrapper>
         </div>
       </section>
 
-      {/* CTA Banner */}
-      <section className="py-24 bg-primary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-          <FadeIn>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Ready to Restore Your Device?</h2>
-            <p className="text-white/80 text-xl mb-10 max-w-2xl mx-auto">
-              Book a repair today or browse our catalogue of premium spare parts.
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link 
-                to="/book-repair" 
-                className="px-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-colors shadow-lg"
-              >
-                Book Now
-              </Link>
-              <Link 
-                to="/contact" 
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+      <Features />
+
+      <Testimonials />
+
+      <Gallery />
+      
+      <MapSection />
 
       <Footer />
     </div>

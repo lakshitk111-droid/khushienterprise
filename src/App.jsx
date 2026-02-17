@@ -7,6 +7,8 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -22,6 +24,8 @@ function App() {
   return (
     <>
       <ScrollToTop />
+      <ScrollToTopButton />
+      <FloatingWhatsApp />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
