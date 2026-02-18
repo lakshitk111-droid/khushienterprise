@@ -38,11 +38,11 @@ const FanCard = ({ feature, index, total }) => {
           transition: { type: "spring", stiffness: 200, damping: 20 }
         }
       }}
-      className="bg-white p-6 rounded-2xl shadow-md border border-gray-100 flex flex-col items-center text-center h-80 w-64 relative shrink-0"
+      className="bg-gradient-to-br from-[#ffffff] via-[#fff5f5] to-[#ffeaea] p-6 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-red-100 flex flex-col items-center text-center h-80 w-64 relative shrink-0 hover:scale-[1.02]"
     >
       <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary/0 via-primary/40 to-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="w-14 h-14 bg-gray-50 rounded-full flex items-center justify-center mb-6 mt-4 group-hover:bg-primary/10 transition-colors duration-300">
+      <div className="w-14 h-14 bg-gradient-to-br from-white to-red-50 shadow-sm rounded-full flex items-center justify-center mb-6 mt-4 group-hover:bg-primary/10 transition-colors duration-300">
         <feature.icon size={28} className="text-secondary group-hover:text-primary transition-colors" />
       </div>
       <h3 className="text-lg font-bold text-secondary mb-3">{feature.title}</h3>
@@ -98,10 +98,10 @@ const Features = () => {
         {features.map((feature, index) => (
           <FadeIn key={index} delay={index * 0.1}>
             <motion.div 
-              whileHover={{ y: -5 }}
-              className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col items-center text-center h-full group"
+              whileHover={{ y: -5, scale: 1.02 }}
+              className="bg-gradient-to-br from-[#ffffff] via-[#fff5f5] to-[#ffeaea] p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-red-100 flex flex-col items-center text-center h-full group"
             >
-              <div className="w-16 h-16 bg-gray-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-white to-red-50 shadow-sm rounded-full flex items-center justify-center mb-6 group-hover:bg-primary/10 transition-colors duration-300">
                 <feature.icon size={32} className="text-secondary group-hover:text-primary transition-colors" />
               </div>
               <h3 className="text-lg font-bold text-secondary mb-3">{feature.title}</h3>

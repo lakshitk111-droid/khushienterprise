@@ -98,8 +98,7 @@ const Contact = () => {
             delay={0.4}
             content={
               <>
-                <p>+91 98765 43210</p>
-                <p>+91 12345 67890</p>
+                <p>+91 98680 22297</p>
               </>
             }
           />
@@ -147,10 +146,10 @@ const Contact = () => {
                     <Phone size={18} className="text-primary-light" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Phone Numbers</h4>
+                    <h4 className="font-bold text-lg mb-1">Phone Number</h4>
                     <p className="text-gray-400 text-sm">
-                      Support: +91 98765 43210 <br/>
-                      Sales: +91 12345 67890
+                      Call for immediate assistance. <br/>
+                      <a href="tel:+919868022297" className="hover:text-white transition-colors">+91 98680 22297</a>
                     </p>
                   </div>
                 </div>
@@ -162,8 +161,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-1">Email Address</h4>
                     <p className="text-gray-400 text-sm">
-                      support@laptopcare.com <br/>
-                      info@laptopcare.com
+                      contact@khushienterprises.com
                     </p>
                   </div>
                 </div>

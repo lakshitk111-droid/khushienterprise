@@ -11,7 +11,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -27,8 +27,10 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`sticky top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-2 border-b border-gray-100' : 'bg-white/95 backdrop-blur-md shadow-sm py-3 border-b border-transparent'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
+        scrolled 
+          ? 'bg-white/10 backdrop-blur-md shadow-md py-2' 
+          : 'bg-white shadow-none py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,8 +40,8 @@ const Navbar = () => {
             <div className="p-2 rounded-lg bg-primary text-white group-hover:bg-primary-dark transition-colors">
                <Laptop size={24} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-secondary group-hover:text-primary transition-colors">
-              LaptopCare
+            <span className={`text-xl font-bold tracking-tight transition-colors ${scrolled ? 'text-secondary' : 'text-secondary'}`}>
+              Khushi Enterprises
             </span>
           </Link>
 

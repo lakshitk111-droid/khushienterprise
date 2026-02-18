@@ -21,14 +21,9 @@ const FloatingWhatsApp = () => {
 
   const contacts = [
     {
-      name: "Rupesh",
-      number: "919992602021",
+      name: "Khushi Enterprises",
+      number: "919868022297",
       role: "Support Team"
-    },
-    {
-      name: "Yogesh",
-      number: "918222835004",
-      role: "Sales Team"
     }
   ];
 

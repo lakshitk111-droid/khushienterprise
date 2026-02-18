@@ -6,6 +6,7 @@ import TopBar from '../components/TopBar';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
 import SectionWrapper, { FadeIn } from '../components/Animations';
+import Button from '../components/ui/Button';
 
 const About = () => {
   return (
@@ -31,7 +32,7 @@ const About = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-gray-300 text-lg md:text-xl font-light"
           >
-            Discover the story behind LaptopCare and our mission to keep your digital life running smoothly.
+            Discover the story behind Khushi Enterprises and our mission to keep your digital life running smoothly.
           </motion.p>
         </div>
       </div>
@@ -79,7 +80,7 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-gray-500 text-lg leading-relaxed">
               <p>
-                LaptopCare was born from a simple observation: in a world dependent on technology, finding reliable, transparent, and quick repair services was surprisingly difficult. We set out to change that.
+                Khushi Enterprises was born from a simple observation: in a world dependent on technology, finding reliable, transparent, and quick repair services was surprisingly difficult. We set out to change that.
               </p>
               <p>
                 What started as a small workshop has grown into a premier service center known for its expertise and integrity. We don't just fix devices; we restore your connection to work, entertainment, and the people you love.

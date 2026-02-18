@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white tracking-tight">LaptopCare</h3>
+            <h3 className="text-2xl font-bold text-white tracking-tight">Khushi Enterprises</h3>
             <p className="text-gray-400 text-sm leading-loose font-light max-w-xs">
               Premium laptop repair services and authentic spare parts. 
               Restoring your digital companions with precision and care.
@@ -89,11 +89,11 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
                 <Phone size={16} className="flex-shrink-0 text-primary" />
-                <span>+91 98765 43210</span>
+                <span>+91 98680 22297</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
                 <Mail size={16} className="flex-shrink-0 text-primary" />
-                <span>support@laptopcare.com</span>
+                <span>contact@khushienterprises.com</span>
               </li>
             </ul>
 
@@ -119,7 +119,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-xs font-light tracking-wide">
-            © {new Date().getFullYear()} LaptopCare. All rights reserved.
+            © {new Date().getFullYear()} Khushi Enterprises. All rights reserved.
           </p>
           <div className="flex space-x-8">
             <a href="#" className="text-gray-500 text-xs hover:text-white transition-colors font-light">Privacy Policy</a>

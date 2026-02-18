@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Check } from 'lucide-react';
+import { Calendar, Clock, MapPin, Check, Phone } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SectionWrapper, { FadeIn } from '../components/Animations';
@@ -225,6 +225,17 @@ const BookRepair = () => {
                   <button type="submit" className="w-full py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-light transition-colors shadow-lg shadow-primary/30">
                     Confirm Booking
                   </button>
+                </div>
+
+                <div className="flex items-center space-x-4 p-4 bg-gray-50 rounded-xl">
+                  <div className="bg-primary/10 p-3 rounded-full text-primary">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-secondary">Call Us Directly</h4>
+                    <p className="text-gray-500 text-sm mb-1">For urgent repairs or queries.</p>
+                    <a href="tel:+919868022297" className="text-primary font-bold">+91 98680 22297</a>
+                  </div>
                 </div>
               </form>
             )}

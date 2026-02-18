@@ -123,7 +123,7 @@ const Home = () => {
                 variant="creative"
               />
               <p className="text-gray-500 text-lg mb-6 leading-relaxed">
-                LaptopCare was born from a simple idea: technology should serve you, not stress you. 
+                Khushi Enterprises was born from a simple idea: technology should serve you, not stress you. 
                 We created a service where modern expertise meets old-school reliability.
               </p>
               <p className="text-gray-500 text-lg mb-10 leading-relaxed">

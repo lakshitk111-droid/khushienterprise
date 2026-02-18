@@ -46,7 +46,7 @@ const MapSection = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-secondary mb-1">Phone</h4>
-                  <p className="text-gray-500 text-sm">+91 98765 43210</p>
+                  <p className="text-gray-500 text-sm">+91 98680 22297</p>
                 </div>
               </div>
 
