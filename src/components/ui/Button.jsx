@@ -42,6 +42,13 @@ const Button = ({
   );
 
   if (href) {
+    if (href.startsWith('http') || href.startsWith('mailto') || href.startsWith('tel')) {
+      return (
+        <a href={href} className={combinedStyles} target="_blank" rel="noopener noreferrer" {...props}>
+          {content}
+        </a>
+      );
+    }
     return (
       <Link to={href} className={combinedStyles} {...props}>
         {content}

@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Clock, Send, User, MessageSquare, Check } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TopBar from '../components/TopBar';
 import SectionWrapper, { FadeIn } from '../components/Animations';
 import ContactInfoCard from '../components/ContactInfoCard';
 import Button from '../components/ui/Button';
@@ -46,7 +45,6 @@ const Contact = () => {
 
   return (
     <div className="bg-gray-50 font-sans text-secondary overflow-x-hidden">
-      <TopBar />
       <Navbar />
 
       {/* Page Hero Section */}

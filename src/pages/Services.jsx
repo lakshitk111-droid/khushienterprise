@@ -13,6 +13,7 @@ import CTASection from '../components/CTASection';
 import Button from '../components/ui/Button';
 import heroImg from '../assets/image.jpg';
 import ctaImg from '../assets/image2.jpg';
+import bgImg from '../assets/bg1.jpg';
 
 const services = [
   {
@@ -108,6 +109,28 @@ const brands = [
   { name: "Acer", logo: "https://upload.wikimedia.org/wikipedia/commons/0/00/Acer_2011.svg" }
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  }
+};
+
 const Services = () => {
   return (
     <div className="bg-gray-50 min-h-screen font-sans text-secondary">
@@ -121,110 +144,178 @@ const Services = () => {
 
       <SectionWrapper className="relative">
         <PatternBackground variant="dots" className="opacity-40 text-gray-200" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10"
+        >
           {services.map((service, index) => (
-            <FadeIn key={index} delay={index * 0.1}>
-              <motion.div 
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 group h-full flex flex-col relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 p-4 opacity-0 group-hover:opacity-5 transition-opacity duration-500 transform translate-x-4 -translate-y-4">
-                  <service.icon size={100} />
-                </div>
-                <div className="w-16 h-16 bg-gray-50 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
-                  <service.icon size={32} className="text-secondary group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="text-2xl font-bold text-secondary mb-3 relative z-10">{service.title}</h3>
-                <p className="text-gray-500 mb-6 flex-grow leading-relaxed relative z-10">{service.description}</p>
-                <div className="pt-6 border-t border-gray-100 flex justify-between items-center relative z-10">
-                  <span className="text-primary font-bold text-lg">{service.price}</span>
-                  <Button href="/book-repair" variant="soft" size="sm">
-                    Book Now
-                  </Button>
-                </div>
-              </motion.div>
-            </FadeIn>
+            <motion.div 
+              key={index}
+              variants={itemVariants}
+              whileHover={{ 
+                y: -6, 
+                scale: 1.03,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              className="bg-gradient-to-b from-white to-gray-50 p-8 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col h-full group transition-all duration-300 relative overflow-hidden"
+            >
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:border-primary/20 transition-colors duration-300">
+                <service.icon size={32} className="text-gray-400 group-hover:text-primary transition-colors duration-300" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
+              <p className="text-gray-500 mb-8 leading-relaxed flex-grow">{service.description}</p>
+              <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+                <span className="text-lg font-semibold text-gray-900">{service.price}</span>
+                <Button href="/book-repair" variant="outline" size="sm" className="rounded-full px-6 border-gray-200 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                  Book Now
+                </Button>
+              </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </SectionWrapper>
 
       {/* Why Choose Our Services */}
-      <section className="py-16 bg-white relative">
-        <PatternBackground variant="grid" className="opacity-10" />
+      <section className="py-16 bg-gradient-to-b from-white to-stone-50 relative overflow-hidden">
         <SectionWrapper className="relative z-10">
-          <div className="text-center mb-16">
-            <FadeIn>
+          <div className="text-center mb-12">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <SectionHeading 
                 title="Why Choose Us" 
                 subtitle="Our Commitment"
                 alignment="center"
                 variant="creative"
               />
-              <p className="text-gray-500 max-w-2xl mx-auto mt-4">
+              <p className="text-gray-500 max-w-2xl mx-auto mt-4 text-sm leading-relaxed">
                 We pride ourselves on delivering top-notch repair services with a focus on quality, speed, and customer satisfaction.
               </p>
-            </FadeIn>
+            </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <motion.div 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {features.map((feature, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <motion.div 
-                  whileHover={{ y: -5 }}
-                  className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-white hover:shadow-lg transition-all duration-300 border border-transparent hover:border-primary/20 h-full"
-                >
-                  <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 text-primary">
-                    <feature.icon size={28} />
-                  </div>
-                  <h3 className="text-xl font-bold text-secondary mb-3">{feature.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
-                </motion.div>
-              </FadeIn>
+              <motion.div 
+                key={index}
+                variants={itemVariants}
+                whileHover={{ y: -4, boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.05)" }}
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-primary/10 transition-all duration-300 h-full text-center group"
+              >
+                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-50 to-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm border border-red-50/50">
+                  <feature.icon size={24} className="text-primary/80 group-hover:text-primary transition-colors duration-300" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{feature.description}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </SectionWrapper>
       </section>
 
       {/* Service Process Section */}
-      <section className="py-16 bg-gray-50 relative">
+      <section 
+        className="py-20 relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${bgImg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0.75))'
+          }}
+        ></div>
         <SectionWrapper>
-          <div className="text-center mb-16">
-            <FadeIn>
+          <div className="text-center mb-16 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
               <SectionHeading 
                 title="How It Works" 
                 subtitle="Simple Process"
                 alignment="center"
                 variant="default"
               />
-              <p className="text-gray-500 max-w-2xl mx-auto mt-4">
+              <p className="text-gray-500 max-w-2xl mx-auto mt-4 text-sm leading-relaxed">
                 Our streamlined process ensures your device is back in your hands as quickly as possible.
               </p>
-            </FadeIn>
+            </motion.div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-            {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10 transform translate-y-4"></div>
-            
-            {processSteps.map((step, index) => (
-              <FadeIn key={index} delay={index * 0.15}>
-                <div className="relative text-center bg-gray-50 md:bg-transparent">
-                  <div className="w-16 h-16 bg-white border-4 border-primary rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold text-secondary shadow-md z-10">
-                    {step.number}
+          
+          <div className="relative max-w-6xl mx-auto px-4">
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              className="grid grid-cols-1 md:grid-cols-4 gap-6"
+            >
+              {processSteps.map((step, index) => (
+                <motion.div 
+                  key={index}
+                  variants={itemVariants}
+                  whileHover={{ 
+                    y: -10, 
+                    scale: 1.03,
+                    boxShadow: "0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.05)"
+                  }}
+                  className="relative bg-gradient-to-b from-white to-gray-50/50 p-8 rounded-[2rem] shadow-sm border border-white/50 backdrop-blur-sm flex flex-col items-center text-center group cursor-default transition-all duration-300"
+                >
+                  {/* Subtle Glow Effect on Hover */}
+                  <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Step Number Badge */}
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 relative z-10 bg-white shadow-sm border border-gray-100 group-hover:border-primary/20 transition-all duration-300 group-hover:scale-110 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <span className="text-xl font-bold text-primary group-hover:text-white relative z-10 transition-colors duration-300 font-serif">
+                      {step.number}
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-secondary mb-3">{step.title}</h3>
-                  <p className="text-gray-500 text-sm px-4">{step.description}</p>
-                </div>
-              </FadeIn>
-            ))}
+
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 relative z-10 group-hover:text-primary transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  
+                  <p className="text-gray-500 text-sm leading-relaxed relative z-10 group-hover:text-gray-600 transition-colors duration-300">
+                    {step.description}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </SectionWrapper>
       </section>
 
       {/* Brands We Support */}
-      <section className="py-16 bg-white overflow-hidden relative">
-        <PatternBackground variant="dots" className="opacity-20" />
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <PatternBackground variant="dots" className="opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-gray-50/50"></div>
         <SectionWrapper className="relative z-10">
           <div className="text-center mb-12">
-            <FadeIn>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <SectionHeading 
                 title="Brands We Support" 
                 subtitle="Compatibility"
@@ -232,21 +323,35 @@ const Services = () => {
                 variant="default"
               />
               <p className="text-gray-400 mt-4">We specialize in repairing all major laptop brands.</p>
-            </FadeIn>
+            </motion.div>
           </div>
-          <FadeIn>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
               {brands.map((brand, index) => (
-                <div key={index} className="w-24 h-12 md:w-32 md:h-16 flex items-center justify-center p-2 hover:scale-110 transition-transform duration-300">
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                  whileHover={{ scale: 1.1, y: -5 }}
+                  className="w-24 h-12 md:w-32 md:h-16 flex items-center justify-center p-2 group relative"
+                >
+                  <div className="absolute inset-0 bg-white rounded-lg opacity-0 group-hover:opacity-100 group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105"></div>
                   <img 
                     src={brand.logo} 
                     alt={brand.name} 
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10"
                   />
-                </div>
+                </motion.div>
               ))}
             </div>
-          </FadeIn>
+          </motion.div>
         </SectionWrapper>
       </section>
 

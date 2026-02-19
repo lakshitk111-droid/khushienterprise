@@ -1,8 +1,11 @@
 import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Laptop } from 'lucide-react';
+import { AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Button from './ui/Button';
+import { GOOGLE_MAPS_LINK } from '../utils/constants';
+import logobox from '../assets/logobox.jpg';
+import logotext from '../assets/logotext.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +14,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
+      setScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -29,20 +32,29 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled 
-          ? 'bg-white/10 backdrop-blur-md shadow-md py-2' 
-          : 'bg-white shadow-none py-4'
+          ? 'bg-slate-900/80 backdrop-blur-md shadow-lg py-2' 
+          : 'bg-transparent shadow-none py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 group">
-            <div className="p-2 rounded-lg bg-primary text-white group-hover:bg-primary-dark transition-colors">
-               <Laptop size={24} />
+          <Link to="/" className="flex items-center space-x-3 group">
+            {/* Boxed Logo Image Only */}
+            <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+              <img 
+                src={logobox} 
+                alt="Khushi Enterprises Logo" 
+                className="w-full h-full object-contain p-1"
+              />
             </div>
-            <span className={`text-xl font-bold tracking-tight transition-colors ${scrolled ? 'text-secondary' : 'text-secondary'}`}>
-              Khushi Enterprises
-            </span>
+            
+            {/* Brand Text Image Outside Box */}
+            <img 
+              src={logotext} 
+              alt="Khushi Enterprises" 
+              className="h-8 md:h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Menu */}
@@ -52,7 +64,11 @@ const Navbar = () => {
                 key={link.name}
                 to={link.path}
                 className={`text-sm font-medium transition-colors hover:text-primary relative group ${
-                  location.pathname === link.path ? 'text-primary' : 'text-secondary'
+                  location.pathname === link.path 
+                    ? 'text-primary' 
+                    : scrolled 
+                      ? 'text-gray-300 hover:text-white' 
+                      : 'text-white hover:text-primary'
                 }`}
               >
                 {link.name}
@@ -63,12 +79,22 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
+          {/* CTA Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
             <Button 
-              href="/book-repair" 
+              href={GOOGLE_MAPS_LINK} 
               variant="primary" 
               size="sm"
+              aria-label="Open our location on Google Maps"
+              className="whitespace-nowrap shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
+            >
+              Visit Our Center
+            </Button>
+            <Button 
+              href="/book-repair" 
+              variant="outlineWhite" 
+              size="sm"
+              className={`whitespace-nowrap ${scrolled ? 'border-gray-400 text-gray-200 hover:bg-white hover:text-primary hover:border-white' : 'border-white/50 text-white hover:bg-white hover:text-primary'}`}
             >
               Book Repair
             </Button>
@@ -78,7 +104,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-md text-secondary hover:text-primary transition-colors"
+              className={`p-2 rounded-md transition-colors ${
+                scrolled ? 'text-gray-300 hover:text-white' : 'text-white hover:text-primary'
+              }`}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -93,7 +121,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100 overflow-hidden"
+            className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-gray-700 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -101,22 +129,34 @@ const Navbar = () => {
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block px-3 py-4 text-base font-medium border-b border-gray-50 hover:bg-gray-50 rounded-lg ${
-                    location.pathname === link.path ? 'text-primary bg-primary/5' : 'text-secondary'
-                  }`}
+                  className={`block px-3 py-4 text-base font-medium border-b border-gray-700 hover:bg-gray-800 rounded-lg transition-colors ${
+                  location.pathname === link.path ? 'text-primary bg-primary/10' : 'text-gray-300 hover:text-white'
+                }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Button
-                href="/book-repair"
-                onClick={() => setIsOpen(false)}
-                variant="primary"
-                className="w-full mt-4"
-                size="lg"
-              >
-                Book Repair
-              </Button>
+              <div className="flex flex-col gap-3 mt-4">
+                <Button
+                  href={GOOGLE_MAPS_LINK}
+                  onClick={() => setIsOpen(false)}
+                  variant="primary"
+                  className="w-full shadow-lg"
+                  size="lg"
+                  aria-label="Open our location on Google Maps"
+                >
+                  Visit Our Center
+                </Button>
+                <Button
+                  href="/book-repair"
+                  onClick={() => setIsOpen(false)}
+                  variant="outlineWhite"
+                  className="w-full border-gray-600 text-gray-300 hover:border-white hover:text-white hover:bg-white/5"
+                  size="lg"
+                >
+                  Book Repair
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}

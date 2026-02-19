@@ -10,7 +10,7 @@
   }
   
   body {
-    @apply antialiased text-secondary;
+    @apply antialiased text-secondary overflow-x-hidden;
   }
 }
 

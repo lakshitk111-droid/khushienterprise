@@ -2,16 +2,15 @@ import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import TopBar from '../components/TopBar';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
 import SectionWrapper, { FadeIn } from '../components/Animations';
 import Button from '../components/ui/Button';
+import { GOOGLE_MAPS_LINK } from '../utils/constants';
 
 const About = () => {
   return (
     <div className="bg-gray-50 font-sans text-secondary overflow-x-hidden">
-      <TopBar />
       <Navbar />
 
       {/* Page Hero / Banner */}
@@ -90,12 +89,13 @@ const About = () => {
               </p>
             </div>
             
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-start">
-               <Button 
-                href="/contact" 
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                href={GOOGLE_MAPS_LINK}
                 variant="primary"
                 size="lg"
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto shadow-lg"
+                aria-label="Open our location on Google Maps"
               >
                 Visit Our Center
               </Button>
@@ -113,9 +113,7 @@ const About = () => {
       </SectionWrapper>
 
       {/* Testimonials Section */}
-      <div className="bg-gray-50 py-10">
-        <Testimonials />
-      </div>
+      <Testimonials />
 
       {/* Instagram Follow Section */}
       <Gallery />

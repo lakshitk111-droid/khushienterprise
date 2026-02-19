@@ -3,8 +3,7 @@ import { ArrowRight, Wrench, ShieldCheck, Clock, CheckCircle, Activity, Zap, Pen
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import Hero from '../components/Hero';
-import TopBar from '../components/TopBar';
+import HeroScroll from '../components/HeroScroll';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
@@ -40,11 +39,10 @@ const ServiceCard = ({ icon: Icon, title, description, delay }) => (
 
 const Home = () => {
   return (
-    <div className="bg-gray-50 font-sans text-secondary overflow-x-hidden">
-      <TopBar />
+    <div className="bg-gray-50 font-sans text-secondary">
       <Navbar />
       
-      <Hero />
+      <HeroScroll />
 
       {/* Services Preview Section */}
       <SectionWrapper className="bg-white relative">

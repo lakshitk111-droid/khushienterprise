@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
 import footerBg from '../assets/footer.jpg';
+import logobox from '../assets/logobox.jpg';
+import logotext from '../assets/logotext.png';
 
 const Footer = () => {
   const [email, setEmail] = useState('');
@@ -36,7 +38,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
           {/* Brand Column */}
           <div className="space-y-6">
-            <h3 className="text-2xl font-bold text-white tracking-tight">Khushi Enterprises</h3>
+            <div className="flex items-center space-x-3">
+              {/* Boxed Logo Image Only */}
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
+                <img 
+                  src={logobox} 
+                  alt="Khushi Enterprises Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
+              </div>
+              
+              {/* Brand Text Image Outside Box */}
+              <img 
+                src={logotext} 
+                alt="Khushi Enterprises" 
+                className="h-8 md:h-10 w-auto object-contain"
+              />
+            </div>
             <p className="text-gray-400 text-sm leading-loose font-light max-w-xs">
               Premium laptop repair services and authentic spare parts. 
               Restoring your digital companions with precision and care.
