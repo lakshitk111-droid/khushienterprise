@@ -12,6 +12,7 @@ import SectionHeading from '../components/ui/SectionHeading';
 import PatternBackground from '../components/ui/PatternBackground';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
+import Image from '../components/ui/Image';
 
 const parts = [
   {
@@ -212,7 +213,7 @@ const SpareParts = () => {
                   onClick={() => setSelectedPart(part)}
                 >
                   <div className="relative aspect-[1.1] overflow-hidden bg-gray-50">
-                    <motion.img 
+                    <Image 
                       layoutId={`image-${part.id}`}
                       src={part.image} 
                       alt={part.name} 
@@ -238,29 +239,20 @@ const SpareParts = () => {
                     
                     <motion.h3 
                       layoutId={`title-${part.id}`} 
-                      className="text-base font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-snug min-h-[2.5rem]"
+                      className="text-base font-bold text-gray-800 mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-300 leading-snug"
                     >
                       {part.name}
                     </motion.h3>
-                    
-                    <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-50">
-                      <motion.span layoutId={`price-${part.id}`} className="text-lg font-bold text-gray-900">
-                        {part.price}
-                      </motion.span>
-                      <button className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
-                        <ShoppingCart size={16} />
-                      </button>
-                    </div>
                   </div>
                 </motion.div>
               ))
             ) : (
-              <div className="col-span-full text-center py-24 bg-white rounded-3xl border border-dashed border-gray-200">
+              <div className="col-span-full text-left md:text-center py-24 bg-white rounded-3xl border border-dashed border-gray-200">
                 <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gray-50 text-gray-300 mb-6">
                   <Search size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">No parts found</h3>
-                <p className="text-gray-500 max-w-md mx-auto">We couldn't find any parts matching your search. Try adjusting your filters or search term.</p>
+                <p className="text-gray-500 max-w-md mr-auto md:mx-auto">We couldn't find any parts matching your search. Try adjusting your filters or search term.</p>
                 <button 
                   onClick={() => {setSearchTerm(''); setSelectedCategory('All Categories'); setSelectedBrand('All Brands');}}
                   className="mt-6 px-6 py-2 bg-primary/10 text-primary font-medium rounded-full hover:bg-primary hover:text-white transition-all duration-300"
@@ -291,13 +283,13 @@ const SpareParts = () => {
             >
               <button
                 onClick={() => setSelectedPart(null)}
-                className="absolute top-4 right-4 z-20 p-2 bg-white/50 hover:bg-white rounded-full transition-colors text-gray-600 hover:text-red-500"
+                className="absolute top-4 right-4 z-20 p-2 bg-white/50 hover:bg-white rounded-full transition-colors text-gray-600 hover:text-primary"
               >
                 <X size={24} />
               </button>
               
               <div className="w-full md:w-1/2 relative bg-gray-100 h-64 md:h-auto">
-                <motion.img
+                <Image
                   layoutId={`image-${selectedPart.id}`}
                   src={selectedPart.image}
                   alt={selectedPart.name}
@@ -369,7 +361,7 @@ const SpareParts = () => {
                   }}
                 >
                   <div className="absolute inset-0 bg-gray-200 animate-pulse" />
-                  <img 
+                  <Image 
                     src={category.image} 
                     alt={category.name} 
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 relative z-10"
@@ -396,7 +388,7 @@ const SpareParts = () => {
         <PatternBackground variant="dots" className="opacity-20 text-gray-300" />
         
         <SectionWrapper className="relative z-10">
-          <div className="text-center mb-10">
+          <div className="text-left md:text-center mb-10">
             <FadeIn>
               <SectionHeading 
                 title="Why Buy From Us" 
@@ -417,7 +409,7 @@ const SpareParts = () => {
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-gray-50 to-transparent opacity-50 group-hover:scale-150 transition-transform duration-500 rounded-bl-full -mr-8 -mt-8" />
                   
                   <div className="flex flex-col items-center text-center relative z-10">
-                    <div className="w-16 h-16 bg-red-50/50 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:rotate-3">
+                    <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center mb-6 text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 shadow-sm group-hover:shadow-lg group-hover:rotate-3">
                       <feature.icon size={28} className="transition-transform duration-300 group-hover:scale-110" />
                     </div>
                     <h3 className="font-bold text-gray-900 text-lg mb-3">{feature.title}</h3>

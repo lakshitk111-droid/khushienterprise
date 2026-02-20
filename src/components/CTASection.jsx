@@ -18,12 +18,12 @@ const CTASection = ({ title, subtitle, buttonText, buttonLink, backgroundImage }
 
       {/* Content */}
       <div className="relative z-20 w-full">
-        <SectionWrapper className="text-center text-white">
+        <SectionWrapper className="text-left md:text-center text-white">
           <FadeIn>
             <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
               {title}
             </h2>
-            <p className="text-xl text-gray-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-gray-200 mb-10 max-w-2xl mr-auto md:mx-auto font-light leading-relaxed">
               {subtitle}
             </p>
             <Button 

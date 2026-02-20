@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, MapPin, Check, Phone } from 'lucide-react';
+import { Calendar, Clock, Check, Phone } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SectionWrapper, { FadeIn } from '../components/Animations';
@@ -54,7 +54,7 @@ const BookRepair = () => {
     <div className="bg-gray-50 min-h-screen font-sans text-secondary">
       <Navbar />
       
-      <div className="pt-32 pb-16 bg-secondary text-white text-center">
+      <div className="pt-32 pb-16 bg-secondary text-white text-left md:text-center">
         <div className="max-w-7xl mx-auto px-4">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ const BookRepair = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto"
+            className="text-gray-400 text-lg max-w-2xl mr-auto md:mx-auto"
           >
             Schedule a visit or pickup for your device.
           </motion.p>
@@ -81,7 +81,7 @@ const BookRepair = () => {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-12 text-center"
+                className="flex flex-col items-start md:items-center justify-center py-12 text-left md:text-center"
               >
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-6">
                   <Check size={40} />

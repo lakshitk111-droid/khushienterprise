@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import Image from './ui/Image';
 import footerBg from '../assets/footer.jpg';
 import logobox from '../assets/logobox.jpg';
 import logotext from '../assets/logotext.png';
@@ -41,7 +42,7 @@ const Footer = () => {
             <div className="flex items-center space-x-3">
               {/* Boxed Logo Image Only */}
               <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
-                <img 
+                <Image 
                   src={logobox} 
                   alt="Khushi Enterprises Logo" 
                   className="w-full h-full object-contain p-1"
@@ -49,7 +50,7 @@ const Footer = () => {
               </div>
               
               {/* Brand Text Image Outside Box */}
-              <img 
+              <Image 
                 src={logotext} 
                 alt="Khushi Enterprises" 
                 className="h-8 md:h-10 w-auto object-contain"
@@ -103,7 +104,7 @@ const Footer = () => {
             <ul className="space-y-4 mb-8">
               <li className="flex items-start space-x-3 text-gray-400 text-sm font-light">
                 <MapPin size={16} className="mt-1 flex-shrink-0 text-primary" />
-                <span>123 Tech Park, Cyber City, Gurugram</span>
+                <span>Serving Gurugram & Delhi NCR<br/>(Door-to-Door Service)</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
                 <Phone size={16} className="flex-shrink-0 text-primary" />
@@ -111,7 +112,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center space-x-3 text-gray-400 text-sm font-light">
                 <Mail size={16} className="flex-shrink-0 text-primary" />
-                <span>contact@khushienterprises.com</span>
+                <span>Khushienterprises241@gmail.com</span>
               </li>
             </ul>
 
@@ -135,7 +136,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <div className="border-t border-gray-800/50 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center space-y-4 md:space-y-0">
           <p className="text-gray-500 text-xs font-light tracking-wide">
             © {new Date().getFullYear()} Khushi Enterprises. All rights reserved.
           </p>

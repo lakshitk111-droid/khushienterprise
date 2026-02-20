@@ -11,7 +11,7 @@ const TopBar = () => {
           </div>
           <div className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer hidden md:flex">
             <Mail size={14} className="text-primary" />
-            <a href="mailto:contact@khushienterprises.com" className="font-medium tracking-wide">contact@khushienterprises.com</a>
+            <a href="mailto:Khushienterprises241@gmail.com" className="font-medium tracking-wide">Khushienterprises241@gmail.com</a>
           </div>
         </div>
         <div className="flex space-x-6">
@@ -21,7 +21,7 @@ const TopBar = () => {
           </div>
           <div className="flex items-center space-x-2">
             <MapPin size={14} className="text-primary" />
-            <span>Gurugram, India</span>
+            <span>Serving Gurugram & Delhi NCR</span>
           </div>
         </div>
       </div>

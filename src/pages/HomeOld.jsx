@@ -7,11 +7,12 @@ import HeroScroll from '../components/HeroScroll';
 import Features from '../components/Features';
 import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
-import MapSection from '../components/MapSection';
+import DoorToDoorBanner from '../components/DoorToDoorBanner';
 import SectionWrapper, { FadeIn } from '../components/Animations';
 import Button from '../components/ui/Button';
 import SectionHeading from '../components/ui/SectionHeading';
 import PatternBackground from '../components/ui/PatternBackground';
+import Image from '../components/ui/Image';
 import ctaImg from '../assets/image2.jpg';
 
 const ServiceCard = ({ icon: Icon, title, description, delay }) => (
@@ -47,7 +48,7 @@ const Home = () => {
       {/* Services Preview Section */}
       <SectionWrapper className="bg-white relative">
         <PatternBackground variant="dots" className="text-gray-100" />
-        <div className="text-center max-w-3xl mx-auto mb-16 relative z-10">
+        <div className="text-left md:text-center max-w-3xl mx-auto mb-16 relative z-10">
           <FadeIn>
             <SectionHeading 
               title="Premium Repair Services" 
@@ -55,7 +56,7 @@ const Home = () => {
               alignment="center"
               variant="creative"
             />
-            <p className="text-gray-500 text-lg mt-4">
+            <p className="text-gray-500 text-lg mt-4 text-left md:text-center">
               We specialize in diagnosing and fixing complex hardware and software issues with precision and care.
             </p>
           </FadeIn>
@@ -90,7 +91,7 @@ const Home = () => {
             <FadeIn direction="right" className="relative">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                   alt="Technician working on laptop repair" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -190,7 +191,7 @@ const Home = () => {
           <FadeIn direction="left" className="order-1 lg:order-2 relative">
              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
                 <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                <img 
+                <Image 
                   src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                   alt="Advanced diagnostics lab" 
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
@@ -217,17 +218,18 @@ const Home = () => {
 
         {/* Content Layer */}
         <div className="relative z-20 w-full">
-          <SectionWrapper className="text-center text-white">
+          <SectionWrapper className="text-left md:text-center text-white">
             <FadeIn>
               <h2 className="text-3xl md:text-5xl font-bold mb-6">Ready to Restore Your Device?</h2>
-              <p className="text-white/90 text-xl mb-10 max-w-2xl mx-auto">
+              <p className="text-white/90 text-xl mb-10 max-w-2xl md:mx-auto">
                 Book a repair today or browse our catalogue of premium spare parts.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <div className="flex flex-col sm:flex-row justify-start md:justify-center gap-4">
                 <Button 
                   href="/book-repair" 
                   variant="white"
                   size="lg"
+                  className="w-full sm:w-auto"
                 >
                   Book Now
                 </Button>
@@ -235,6 +237,7 @@ const Home = () => {
                   href="/contact" 
                   variant="outlineWhite"
                   size="lg"
+                  className="w-full sm:w-auto"
                 >
                   Contact Us
                 </Button>
@@ -248,9 +251,11 @@ const Home = () => {
 
       <Testimonials />
 
+      {/* Instagram Follow Section */}
       <Gallery />
-      
-      <MapSection />
+
+      {/* Door-to-Door Service Banner */}
+      <DoorToDoorBanner />
 
       <Footer />
     </div>

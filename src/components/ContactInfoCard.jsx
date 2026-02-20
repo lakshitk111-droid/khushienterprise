@@ -8,7 +8,7 @@ const ContactInfoCard = ({ icon: Icon, title, content, delay }) => {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       whileHover={{ y: -5 }}
-      className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col items-center text-center group h-full"
+      className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 flex flex-col items-start md:items-center text-left md:text-center group h-full"
     >
       <div className="w-16 h-16 bg-primary/5 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
         <Icon size={28} className="text-primary group-hover:text-white transition-colors" />

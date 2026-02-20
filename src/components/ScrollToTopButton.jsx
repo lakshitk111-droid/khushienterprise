@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.8 }}
           onClick={scrollToTop}
-          className="fixed bottom-28 right-8 p-3 bg-primary text-white rounded-full shadow-lg z-50 hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="fixed bottom-24 right-4 md:bottom-28 md:right-8 p-3 bg-primary text-white rounded-full shadow-lg z-50 hover:bg-primary-dark transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
         >
           <ArrowUp size={24} />
         </motion.button>

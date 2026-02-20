@@ -197,12 +197,12 @@ const HeroScroll = () => {
         <div className="absolute inset-0 bg-black/60 pointer-events-none z-10" />
         
         {/* Layer 2: Content Layer (Text, CTA) */}
-        <div className="relative z-20 flex flex-col justify-center items-center h-full w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
+        <div className="relative z-20 flex flex-col justify-center items-start md:items-center h-full w-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto pointer-events-none">
           
           {/* 0% Scroll: Intro */}
           <motion.div 
             style={{ opacity: opacity1, scale: scale1, y: y1 }} 
-            className="text-center absolute flex flex-col items-center justify-center w-full"
+            className="text-left md:text-center absolute flex flex-col items-start md:items-center justify-center w-full"
           >
             <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white/80 text-xs md:text-sm uppercase tracking-widest">
               Premium Repair Services
@@ -249,7 +249,7 @@ const HeroScroll = () => {
           {/* 95% Scroll: CTA */}
           <motion.div 
             style={{ opacity: opacityCTA, scale: scaleCTA }} 
-            className="absolute inset-x-0 bottom-32 flex flex-col items-center justify-center text-center pointer-events-auto"
+            className="absolute inset-x-0 bottom-32 flex flex-col items-start md:items-center justify-center text-left md:text-center pointer-events-auto px-4 md:px-0"
           >
             <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 tracking-tight">
               Ready to Restore Your Device?
@@ -257,7 +257,7 @@ const HeroScroll = () => {
             <p className="text-lg text-gray-300 mb-8 max-w-2xl">
               From chip-level repairs to complete device restoration — precision, speed, and trust.
             </p>
-            <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
               <Button href="/book-repair" variant="primary" size="lg" className="px-10 py-4 text-lg bg-primary hover:bg-primary-dark text-white border-none shadow-xl shadow-primary/20">
                 Book Repair
               </Button>

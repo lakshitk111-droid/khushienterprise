@@ -88,7 +88,7 @@ const Testimonials = () => {
         />
       </div>
 
-      <div className="relative z-10 text-center max-w-2xl mx-auto mb-10">
+      <div className="relative z-10 text-left md:text-center max-w-2xl mx-auto mb-10">
         <FadeIn>
           <SectionHeading 
             title="What Our Clients Say" 
@@ -121,12 +121,12 @@ const Testimonials = () => {
                   scale: 1.02,
                   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
                 }}
-                className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 flex flex-col items-center text-center relative mx-auto max-w-2xl transition-all duration-300 group cursor-default"
+                className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 flex flex-col items-start md:items-center text-left md:text-center relative mx-auto max-w-2xl transition-all duration-300 group cursor-default"
               >
                 
                 {/* Profile Icon */}
                 <motion.div 
-                  className="w-16 h-16 rounded-full bg-red-50/50 flex items-center justify-center mb-5 shadow-inner text-lg font-bold text-primary border border-red-100 group-hover:bg-red-50 group-hover:shadow-[0_0_20px_rgba(220,38,38,0.15)] transition-all duration-300"
+                  className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-5 shadow-inner text-lg font-bold text-primary border border-primary/20 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-300"
                 >
                   {getInitials(testimonials[currentIndex].name)}
                 </motion.div>
@@ -166,7 +166,7 @@ const Testimonials = () => {
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-6 gap-2">
+        <div className="flex justify-start md:justify-center mt-6 gap-2">
           {testimonials.map((_, idx) => (
             <button
               key={idx}

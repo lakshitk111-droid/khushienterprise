@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import SectionWrapper, { FadeIn } from '../components/Animations';
 import ContactInfoCard from '../components/ContactInfoCard';
 import Button from '../components/ui/Button';
+import PageHero from '../components/PageHero';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -48,45 +49,23 @@ const Contact = () => {
       <Navbar />
 
       {/* Page Hero Section */}
-      <div className="relative h-[350px] w-full bg-secondary flex items-center justify-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" 
-            alt="Contact Support"
-            className="w-full h-full object-cover opacity-20 mix-blend-overlay"
-          />
-        </div>
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <motion.h1 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-4"
-          >
-            Get in Touch
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-gray-300 text-lg md:text-xl font-light"
-          >
-            Have questions? We'd love to hear from you. Send us a message or visit us.
-          </motion.p>
-        </div>
-      </div>
+      <PageHero 
+        title="Get in Touch"
+        subtitle="Have questions? We'd love to hear from you. Send us a message or give us a call."
+        backgroundImage="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80"
+      />
 
       {/* Info Cards Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 relative z-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <ContactInfoCard 
             icon={MapPin} 
-            title="Our Location" 
+            title="Service Area" 
             delay={0.3}
             content={
               <>
-                <p>123 Tech Park, Cyber City</p>
-                <p>Gurugram, Haryana 122002</p>
+                <p>Gurugram & Delhi NCR</p>
+                <p>Door-to-Door Service</p>
               </>
             }
           />
@@ -132,9 +111,9 @@ const Contact = () => {
                     <MapPin size={18} className="text-primary-light" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-lg mb-1">Our Location</h4>
+                    <h4 className="font-bold text-lg mb-1">Service Area</h4>
                     <p className="text-gray-400 text-sm leading-relaxed">
-                      123 Tech Park, Cyber City, <br/>Gurugram, Haryana 122002
+                      Gurugram & Delhi NCR <br/>(Door-to-Door Service)
                     </p>
                   </div>
                 </div>
@@ -159,8 +138,7 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-lg mb-1">Email Address</h4>
                     <p className="text-gray-400 text-sm">
-                      contact@khushienterprises.com
-                    </p>
+                      Khushienterprises241@gmail.com                    </p>
                   </div>
                 </div>
               </div>
@@ -171,7 +149,7 @@ const Contact = () => {
           <FadeIn direction="left" delay={0.2} className="lg:col-span-3">
             <div className="bg-white p-8 md:p-10 rounded-3xl shadow-lg border border-gray-100">
               {submitted ? (
-                <div className="flex flex-col items-center justify-center h-full text-center py-10">
+                <div className="flex flex-col items-start md:items-center justify-center h-full text-left md:text-center py-10">
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4">
                     <Check size={32} />
                   </div>
@@ -286,23 +264,6 @@ const Contact = () => {
           </FadeIn>
         </div>
       </SectionWrapper>
-
-      {/* Map Section */}
-      <div className="px-4 sm:px-6 lg:px-8 pb-20 max-w-7xl mx-auto">
-        <FadeIn delay={0.3}>
-          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100 bg-white p-2 h-[450px]">
-            <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.83923192776!2d77.0688975472578!3d28.52728034389636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sGurugram%2C%20Haryana!5e0!3m2!1sen!2sin!4v1647854652435!5m2!1sen!2sin" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0, borderRadius: '1rem' }} 
-              allowFullScreen="" 
-              loading="lazy"
-              className="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"
-            ></iframe>
-          </div>
-        </FadeIn>
-      </div>
 
       <Footer />
     </div>

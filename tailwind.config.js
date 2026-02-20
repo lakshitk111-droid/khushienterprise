@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#7f1d1d', // Dark Red / Maroon
-          light: '#991b1b',
-          dark: '#450a0a',
+          DEFAULT: '#D4AF37', // Metallic Gold
+          light: '#E5C558',   // Lighter Gold
+          dark: '#B8860B',    // Darker Gold / Bronze
         },
         secondary: {
           DEFAULT: '#1f2937', // Charcoal Black / Dark Gray

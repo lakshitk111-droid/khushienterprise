@@ -1,9 +1,9 @@
 import { Link, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Button from './ui/Button';
-import { GOOGLE_MAPS_LINK } from '../utils/constants';
+import Image from './ui/Image';
 import logobox from '../assets/logobox.jpg';
 import logotext from '../assets/logotext.png';
 
@@ -42,7 +42,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center space-x-3 group">
             {/* Boxed Logo Image Only */}
             <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg shadow-sm border border-gray-100 flex items-center justify-center overflow-hidden flex-shrink-0">
-              <img 
+              <Image 
                 src={logobox} 
                 alt="Khushi Enterprises Logo" 
                 className="w-full h-full object-contain p-1"
@@ -50,7 +50,7 @@ const Navbar = () => {
             </div>
             
             {/* Brand Text Image Outside Box */}
-            <img 
+            <Image 
               src={logotext} 
               alt="Khushi Enterprises" 
               className="h-8 md:h-10 w-auto object-contain"
@@ -58,12 +58,12 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary relative group ${
+                className={`text-sm font-medium transition-colors hover:text-primary relative group py-2 ${
                   location.pathname === link.path 
                     ? 'text-primary' 
                     : scrolled 
@@ -72,7 +72,7 @@ const Navbar = () => {
                 }`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
+                <span className={`absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
                   location.pathname === link.path ? 'w-full' : ''
                 }`}></span>
               </Link>
@@ -80,16 +80,7 @@ const Navbar = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="hidden md:flex items-center space-x-3">
-            <Button 
-              href={GOOGLE_MAPS_LINK} 
-              variant="primary" 
-              size="sm"
-              aria-label="Open our location on Google Maps"
-              className="whitespace-nowrap shadow-lg hover:shadow-primary/40 hover:scale-105 transition-all duration-300"
-            >
-              Visit Our Center
-            </Button>
+          <div className="hidden lg:flex items-center space-x-3">
             <Button 
               href="/book-repair" 
               variant="outlineWhite" 
@@ -121,7 +112,7 @@ const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-slate-900/95 backdrop-blur-lg border-t border-gray-700 overflow-hidden"
+            className="lg:hidden bg-slate-900/95 backdrop-blur-lg border-t border-gray-700 overflow-hidden"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
@@ -137,16 +128,6 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 mt-4">
-                <Button
-                  href={GOOGLE_MAPS_LINK}
-                  onClick={() => setIsOpen(false)}
-                  variant="primary"
-                  className="w-full shadow-lg"
-                  size="lg"
-                  aria-label="Open our location on Google Maps"
-                >
-                  Visit Our Center
-                </Button>
                 <Button
                   href="/book-repair"
                   onClick={() => setIsOpen(false)}

@@ -10,8 +10,8 @@ const SectionHeading = ({
   
   const alignClass = {
     left: 'text-left items-start',
-    center: 'text-center items-center',
-    right: 'text-right items-end'
+    center: 'text-left items-start md:text-center md:items-center',
+    right: 'text-left items-start md:text-right md:items-end'
   };
 
   return (
@@ -58,7 +58,7 @@ const SectionHeading = ({
           initial={{ width: 0, opacity: 0 }}
           whileInView={{ width: '5rem', opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className={`h-1.5 bg-primary mt-4 rounded-full ${alignment === 'center' ? 'mx-auto' : ''}`}
+          className={`h-1.5 bg-primary mt-4 rounded-full ${alignment === 'center' ? 'md:mx-auto' : ''}`}
         />
       )}
 

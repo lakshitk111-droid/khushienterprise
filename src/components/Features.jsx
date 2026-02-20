@@ -20,7 +20,7 @@ const features = [
 const Features = () => {
   return (
     <SectionWrapper className="bg-gray-50">
-      <div className="text-center max-w-3xl mx-auto mb-8 md:mb-16">
+      <div className="text-left md:text-center max-w-3xl mx-auto mb-8 md:mb-16">
         <FadeIn>
           <SectionHeading 
             title="Premium Facilities & Services" 
@@ -28,7 +28,7 @@ const Features = () => {
             alignment="center"
             variant="default"
           />
-          <p className="text-gray-500 text-lg mt-4">
+          <p className="text-gray-500 text-lg mt-4 text-left md:text-center">
             We go beyond standard repairs to provide a comprehensive care package for your digital life.
           </p>
         </FadeIn>
@@ -38,7 +38,7 @@ const Features = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <FadeIn key={index} delay={index * 0.1}>
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ease-out border border-gray-100 flex flex-col items-center text-center h-full group hover:scale-105">
+            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ease-out border border-gray-100 flex flex-col items-start md:items-center text-left md:text-center h-full group hover:scale-105">
               <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center mb-6">
                 <feature.icon size={32} className="text-secondary" />
               </div>

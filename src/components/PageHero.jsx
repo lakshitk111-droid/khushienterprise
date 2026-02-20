@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const PageHero = ({ title, subtitle, backgroundImage }) => {
   return (
-    <div className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center text-center overflow-hidden">
+    <div className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center text-center overflow-hidden bg-gray-900">
       {/* Background Image - Applied via inline style for guaranteed render */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -30,7 +30,7 @@ const PageHero = ({ title, subtitle, backgroundImage }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="text-gray-200 text-lg md:text-xl font-light max-w-2xl mx-auto leading-relaxed"
+          className="text-gray-200 text-lg md:text-xl font-light max-w-[340px] md:max-w-2xl mx-auto leading-relaxed"
         >
           {subtitle}
         </motion.p>

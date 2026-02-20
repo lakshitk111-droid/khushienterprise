@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+      <div className="relative z-10 h-full flex flex-col justify-center items-start md:items-center text-left md:text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         <motion.span 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +47,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4"
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <Button href="/book-repair" variant="primary" size="lg">
             Book a Repair

@@ -11,6 +11,7 @@ import PatternBackground from '../components/ui/PatternBackground';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
 import Button from '../components/ui/Button';
+import Image from '../components/ui/Image';
 import heroImg from '../assets/image.jpg';
 import ctaImg from '../assets/image2.jpg';
 import bgImg from '../assets/bg1.jpg';
@@ -181,7 +182,7 @@ const Services = () => {
       {/* Why Choose Our Services */}
       <section className="py-16 bg-gradient-to-b from-white to-stone-50 relative overflow-hidden">
         <SectionWrapper className="relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-left md:text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -194,7 +195,7 @@ const Services = () => {
                 alignment="center"
                 variant="creative"
               />
-              <p className="text-gray-500 max-w-2xl mx-auto mt-4 text-sm leading-relaxed">
+              <p className="text-gray-500 max-w-2xl mr-auto md:mx-auto mt-4 text-sm leading-relaxed">
                 We pride ourselves on delivering top-notch repair services with a focus on quality, speed, and customer satisfaction.
               </p>
             </motion.div>
@@ -211,9 +212,9 @@ const Services = () => {
                 key={index}
                 variants={itemVariants}
                 whileHover={{ y: -4, boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.05)" }}
-                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-primary/10 transition-all duration-300 h-full text-center group"
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-primary/10 transition-all duration-300 h-full text-left md:text-center group"
               >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-red-50 to-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm border border-red-50/50">
+                <div className="w-16 h-16 mr-auto md:mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-50 to-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm border border-primary/10">
                   <feature.icon size={24} className="text-primary/80 group-hover:text-primary transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -241,7 +242,7 @@ const Services = () => {
           }}
         ></div>
         <SectionWrapper>
-          <div className="text-center mb-16 relative z-10">
+          <div className="text-left md:text-center mb-16 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +255,7 @@ const Services = () => {
                 alignment="center"
                 variant="default"
               />
-              <p className="text-gray-500 max-w-2xl mx-auto mt-4 text-sm leading-relaxed">
+              <p className="text-gray-500 max-w-2xl md:mx-auto mt-4 text-sm leading-relaxed">
                 Our streamlined process ensures your device is back in your hands as quickly as possible.
               </p>
             </motion.div>
@@ -266,7 +267,7 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
-              className="grid grid-cols-1 md:grid-cols-4 gap-6"
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
             >
               {processSteps.map((step, index) => (
                 <motion.div 
@@ -277,7 +278,7 @@ const Services = () => {
                     scale: 1.03,
                     boxShadow: "0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.05)"
                   }}
-                  className="relative bg-gradient-to-b from-white to-gray-50/50 p-8 rounded-[2rem] shadow-sm border border-white/50 backdrop-blur-sm flex flex-col items-center text-center group cursor-default transition-all duration-300"
+                  className="relative bg-gradient-to-b from-white to-gray-50/50 p-8 rounded-[2rem] shadow-sm border border-white/50 backdrop-blur-sm flex flex-col items-start md:items-center text-left md:text-center group cursor-default transition-all duration-300"
                 >
                   {/* Subtle Glow Effect on Hover */}
                   <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
@@ -309,7 +310,7 @@ const Services = () => {
         <PatternBackground variant="dots" className="opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/30 to-gray-50/50"></div>
         <SectionWrapper className="relative z-10">
-          <div className="text-center mb-12">
+          <div className="text-left md:text-center mb-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -322,7 +323,7 @@ const Services = () => {
                 alignment="center"
                 variant="default"
               />
-              <p className="text-gray-400 mt-4">We specialize in repairing all major laptop brands.</p>
+              <p className="text-gray-400 mt-4 text-left md:text-center">We specialize in repairing all major laptop brands.</p>
             </motion.div>
           </div>
           <motion.div
@@ -343,10 +344,10 @@ const Services = () => {
                   className="w-24 h-12 md:w-32 md:h-16 flex items-center justify-center p-2 group relative"
                 >
                   <div className="absolute inset-0 bg-white rounded-lg opacity-0 group-hover:opacity-100 group-hover:shadow-lg transition-all duration-300 transform group-hover:scale-105"></div>
-                  <img 
+                  <Image 
                     src={brand.logo} 
                     alt={brand.name} 
-                    className="max-w-full max-h-full object-contain opacity-60 group-hover:opacity-100 grayscale group-hover:grayscale-0 transition-all duration-300 relative z-10"
+                    className="max-w-full max-h-full object-contain transition-all duration-300 relative z-10"
                   />
                 </motion.div>
               ))}
