@@ -140,7 +140,7 @@ const SpareParts = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="bg-white/90 backdrop-blur-md border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl p-6 md:p-8 mb-8"
+          className="bg-white/90 backdrop-blur-md border border-gray-100 shadow-sm rounded-2xl p-6 md:p-8 mb-8 card-transition card-hover glow-border"
         >
           <div className="flex flex-col lg:flex-row gap-5 items-center">
             {/* Search Input */}
@@ -208,8 +208,7 @@ const SpareParts = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 group h-full flex flex-col cursor-pointer border border-gray-100/50 hover:border-primary/10"
-                  whileHover={{ y: -6 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm transition-all duration-300 group h-full flex flex-col cursor-pointer border border-gray-100 card-transition card-hover glow-border image-hover"
                   onClick={() => setSelectedPart(part)}
                 >
                   <div className="relative aspect-[1.1] overflow-hidden bg-gray-50">
@@ -217,7 +216,7 @@ const SpareParts = () => {
                       layoutId={`image-${part.id}`}
                       src={part.image} 
                       alt={part.name} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
                     {/* Subtle Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

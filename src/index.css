@@ -31,3 +31,112 @@
 ::selection {
   @apply bg-primary/20 text-primary;
 }
+
+/* --- Global Card Enhancements --- */
+@layer components {
+  /* Base Card Transition */
+  .card-transition {
+    transition: all 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply relative overflow-hidden;
+  }
+
+  /* Premium Hover Lift Effect */
+  .card-hover {
+    @apply hover:-translate-y-3 hover:scale-[1.02] border border-transparent;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  .card-hover:hover {
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35), 0 0 25px rgba(212, 175, 55, 0.18); /* Using Gold color explicitly or primary */
+    border-color: rgba(212, 175, 55, 0.15);
+  }
+
+  /* Gradient Glow Border Effect */
+  .glow-border {
+    @apply relative z-0;
+  }
+  
+  .glow-border::before {
+    content: "";
+    @apply absolute inset-[-2px] rounded-[inherit] opacity-0 transition-opacity duration-500 -z-10 pointer-events-none;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.6), rgba(255, 215, 0, 0.3), transparent);
+  }
+  
+  .card-hover:hover.glow-border::before {
+    @apply opacity-100;
+  }
+
+  /* Icon Micro-Animation */
+  .icon-hover {
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+  
+  .card-hover:hover .icon-hover {
+    transform: rotate(8deg) scale(1.15);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+  }
+
+  /* Image Hover Enhancement */
+  .image-hover img {
+    transition: transform 0.6s ease, filter 0.6s ease;
+  }
+  
+  .card-hover:hover .image-hover img {
+    transform: scale(1.08);
+    filter: brightness(1.05);
+  }
+
+  /* Button Micro-Interactions */
+  .btn-premium {
+    transition: all 0.3s ease;
+  }
+  
+  .btn-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.35);
+  }
+
+  /* Testimonial Card Premium Effect */
+  .testimonial-glow::after {
+    content: "";
+    @apply absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-500 pointer-events-none;
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+  }
+  
+  .group:hover .testimonial-glow::after {
+    @apply opacity-100;
+  }
+
+  /* 3D Spin Animation Class */
+  .spin-3d-container {
+    perspective: 1000px;
+  }
+  
+  .spin-3d-content {
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transform-style: preserve-3d;
+  }
+  
+  .group:hover .spin-3d-content {
+    transform: rotateY(360deg);
+  }
+}
+
+@layer utilities {
+  @keyframes float-soft {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float-soft {
+    animation: float-soft 6s ease-in-out infinite;
+  }
+
+  .delay-1000 {
+    animation-delay: 1000ms;
+  }
+
+  .delay-2000 {
+    animation-delay: 2000ms;
+  }
+}

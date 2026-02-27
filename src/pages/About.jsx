@@ -27,29 +27,29 @@ const About = () => {
           {/* Image Gallery */}
           <FadeIn direction="right" className="grid grid-cols-2 gap-4">
             <div className="space-y-4 mt-8">
-              <div className="rounded-2xl overflow-hidden shadow-lg h-64">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-64 card-transition card-hover glow-border image-hover">
                 <Image 
                   src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                   alt="Technician working" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
-              <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-left md:text-center">
+              <div className="bg-primary/5 p-6 rounded-2xl border border-primary/10 text-left md:text-center card-transition card-hover glow-border">
                 <div className="text-3xl font-bold text-primary mb-1">8+</div>
                 <div className="text-sm text-gray-500 uppercase tracking-wider">Years Experience</div>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="bg-secondary p-6 rounded-2xl text-left md:text-center text-white">
+              <div className="bg-secondary p-6 rounded-2xl text-left md:text-center text-white card-transition card-hover glow-border">
                 <div className="text-3xl font-bold mb-1">15k+</div>
                 <div className="text-sm text-gray-400 uppercase tracking-wider">Happy Clients</div>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-lg h-64">
+              <div className="rounded-2xl overflow-hidden shadow-lg h-64 card-transition card-hover glow-border image-hover">
                 <Image 
                   src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
                   alt="Motherboard repair" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -85,7 +85,7 @@ const About = () => {
                 href="/book-repair" 
                 variant="white"
                 size="lg"
-                className="w-full sm:w-auto text-secondary border border-gray-200"
+                className="w-full sm:w-auto text-secondary border border-gray-200 btn-premium"
               >
                 Book Door-to-Door Repair
               </Button>

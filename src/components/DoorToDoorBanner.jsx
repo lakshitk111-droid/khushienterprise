@@ -53,10 +53,10 @@ const DoorToDoorBanner = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-start md:justify-center lg:justify-start">
-            <Button href="/book-repair" variant="primary" size="lg" icon={Calendar}>
+            <Button href="/book-repair" variant="primary" size="lg" icon={Calendar} className="btn-premium">
               Book Door-to-Door Repair
             </Button>
-            <Button href="tel:+919868022297" variant="outline" size="lg" icon={Phone}>
+            <Button href="tel:+919868022297" variant="outline" size="lg" icon={Phone} className="btn-premium">
               Call Now
             </Button>
           </div>
@@ -65,7 +65,7 @@ const DoorToDoorBanner = () => {
         {/* Visual Side */}
         <FadeIn direction="left" className="order-1 lg:order-2">
           <div className="relative">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10 card-transition card-hover image-hover glow-border animate-float-soft">
               <Image 
                 src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                 alt="Doorstep delivery service" 

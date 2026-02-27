@@ -15,24 +15,23 @@ import PatternBackground from '../components/ui/PatternBackground';
 import Image from '../components/ui/Image';
 import ctaImg from '../assets/image2.jpg';
 
-const ServiceCard = ({ icon: Icon, title, description, delay }) => (
+const ServiceCard = ({ icon: Icon, title, description, delay, floatDelay }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    whileHover={{ y: -5 }}
     transition={{ duration: 0.5, delay }}
-    className="group bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/20 relative overflow-hidden"
+    className={`group bg-white p-8 rounded-2xl shadow-sm transition-all duration-300 border border-gray-100 relative overflow-hidden card-transition card-hover glow-border animate-float-soft ${floatDelay}`}
   >
     <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity transform translate-x-4 -translate-y-4">
       <Icon size={80} />
     </div>
-    <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10">
+    <div className="w-14 h-14 bg-primary/5 rounded-full flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300 relative z-10 icon-hover">
       <Icon size={28} className="text-primary group-hover:text-white transition-colors" />
     </div>
     <h3 className="text-xl font-bold text-secondary mb-3 relative z-10">{title}</h3>
     <p className="text-gray-500 leading-relaxed mb-6 relative z-10">{description}</p>
-    <Link to="/services" className="inline-flex items-center text-primary font-medium group-hover:translate-x-1 transition-transform relative z-10">
+    <Link to="/services" className="inline-flex items-center text-primary font-medium btn-premium relative z-10">
       Learn More <ArrowRight size={16} className="ml-2" />
     </Link>
   </motion.div>
@@ -68,18 +67,21 @@ const Home = () => {
             title="Hardware Repair" 
             description="Expert logic board repairs, screen replacements, and component level troubleshooting."
             delay={0.2}
+            floatDelay=""
           />
           <ServiceCard 
             icon={ShieldCheck} 
             title="Genuine Parts" 
             description="We use only authentic spare parts to ensure the longevity and performance of your device."
             delay={0.4}
+            floatDelay="delay-1000"
           />
           <ServiceCard 
             icon={Clock} 
             title="Express Service" 
             description="Quick turnaround times for most repairs, so you can get back to work without delay."
             delay={0.6}
+            floatDelay="delay-2000"
           />
         </div>
       </SectionWrapper>
@@ -89,12 +91,12 @@ const Home = () => {
         <PatternBackground variant="grid" className="opacity-10" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
             <FadeIn direction="right" className="relative">
-              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group card-transition card-hover image-hover glow-border animate-float-soft delay-1000">
                 <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <Image 
                   src="https://images.unsplash.com/photo-1581092921461-eab62e97a783?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                   alt="Technician working on laptop repair" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>
@@ -133,6 +135,7 @@ const Home = () => {
                 href="/about" 
                 variant="secondary"
                 size="lg"
+                className="btn-premium"
               >
                 Read Our Story
               </Button>
@@ -183,18 +186,19 @@ const Home = () => {
               href="/services" 
               variant="outline"
               size="lg"
+              className="btn-premium"
             >
               View Our Process
             </Button>
           </FadeIn>
 
           <FadeIn direction="left" className="order-1 lg:order-2 relative">
-             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group">
+             <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl relative group card-transition card-hover image-hover glow-border animate-float-soft delay-2000">
                 <div className="absolute inset-0 bg-secondary/10 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
                 <Image 
                   src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
                   alt="Advanced diagnostics lab" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                   loading="lazy"
                 />
               </div>

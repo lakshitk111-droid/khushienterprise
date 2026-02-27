@@ -115,21 +115,16 @@ const Testimonials = () => {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} // Smooth easing
               className="w-full"
             >
-              <motion.div 
-                whileHover={{ 
-                  y: -10, 
-                  scale: 1.02,
-                  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
-                }}
-                className="bg-white rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.08)] border border-gray-100/50 flex flex-col items-start md:items-center text-left md:text-center relative mx-auto max-w-2xl transition-all duration-300 group cursor-default"
+              <div 
+                className="bg-white rounded-[2rem] p-8 md:p-10 shadow-sm border border-gray-100/50 flex flex-col items-start md:items-center text-left md:text-center relative mx-auto max-w-2xl group cursor-default card-transition card-hover testimonial-glow glass-card"
               >
                 
                 {/* Profile Icon */}
-                <motion.div 
-                  className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-5 shadow-inner text-lg font-bold text-primary border border-primary/20 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-300"
+                <div 
+                  className="w-16 h-16 rounded-full bg-primary/5 flex items-center justify-center mb-5 shadow-inner text-lg font-bold text-primary border border-primary/20 group-hover:bg-primary/10 group-hover:shadow-[0_0_20px_rgba(212,175,55,0.2)] transition-all duration-300 icon-hover"
                 >
                   {getInitials(testimonials[currentIndex].name)}
-                </motion.div>
+                </div>
 
                 {/* Name & Role */}
                 <h4 className="text-lg font-bold text-gray-900 mb-1">
@@ -160,7 +155,7 @@ const Testimonials = () => {
                   <Quote className="absolute -bottom-4 -right-2 text-gray-200 opacity-50 group-hover:opacity-100 group-hover:text-primary/20 transition-all duration-300" size={32} />
                 </div>
                 
-              </motion.div>
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>

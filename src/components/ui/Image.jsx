@@ -1,19 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import fallbackSrc from '../../assets/image.jpg';
 
 const Image = ({ src, alt, className = '', ...props }) => {
-  const [imgSrc, setImgSrc] = useState(src);
   const [errored, setErrored] = useState(false);
+  const [lastSrc, setLastSrc] = useState(src);
 
-  useEffect(() => {
-    setImgSrc(src);
+  if (src !== lastSrc) {
+    setLastSrc(src);
     setErrored(false);
-  }, [src]);
+  }
+
+  const currentSrc = errored ? fallbackSrc : src;
 
   const handleError = () => {
     if (!errored) {
-      setImgSrc(fallbackSrc);
       setErrored(true);
     }
   };
@@ -26,7 +27,7 @@ const Image = ({ src, alt, className = '', ...props }) => {
 
   return (
     <motion.img
-      src={imgSrc}
+      src={currentSrc}
       alt={alt || "Image"}
       className={finalClassName}
       onError={handleError}

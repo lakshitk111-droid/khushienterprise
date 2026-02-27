@@ -156,21 +156,16 @@ const Services = () => {
             <motion.div 
               key={index}
               variants={itemVariants}
-              whileHover={{ 
-                y: -6, 
-                scale: 1.03,
-                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
-              }}
-              className="bg-gradient-to-b from-white to-gray-50 p-8 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col h-full group transition-all duration-300 relative overflow-hidden"
+              className="bg-white p-8 rounded-[2rem] shadow-sm border border-gray-100 flex flex-col h-full group card-transition card-hover glow-border"
             >
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:border-primary/20 transition-colors duration-300">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-6 shadow-sm border border-gray-100 group-hover:border-primary/20 transition-colors duration-300 icon-hover">
                 <service.icon size={32} className="text-gray-400 group-hover:text-primary transition-colors duration-300" />
               </div>
               <h3 className="text-2xl font-bold text-gray-800 mb-3">{service.title}</h3>
               <p className="text-gray-500 mb-8 leading-relaxed flex-grow">{service.description}</p>
               <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
                 <span className="text-lg font-semibold text-gray-900">{service.price}</span>
-                <Button href="/book-repair" variant="outline" size="sm" className="rounded-full px-6 border-gray-200 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300">
+                <Button href="/book-repair" variant="outline" size="sm" className="rounded-full px-6 border-gray-200 text-gray-600 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 btn-premium">
                   Book Now
                 </Button>
               </div>
@@ -211,10 +206,9 @@ const Services = () => {
               <motion.div 
                 key={index}
                 variants={itemVariants}
-                whileHover={{ y: -4, boxShadow: "0 10px 30px -10px rgba(0, 0, 0, 0.05)" }}
-                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:border-primary/10 transition-all duration-300 h-full text-left md:text-center group"
+                className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 h-full text-left md:text-center group card-transition card-hover glow-border"
               >
-                <div className="w-16 h-16 mr-auto md:mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-50 to-white flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm border border-primary/10">
+                <div className="w-16 h-16 mr-auto md:mx-auto mb-4 rounded-full bg-gradient-to-br from-amber-50 to-white flex items-center justify-center transition-transform duration-300 shadow-sm border border-primary/10 icon-hover">
                   <feature.icon size={24} className="text-primary/80 group-hover:text-primary transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{feature.title}</h3>
@@ -273,18 +267,13 @@ const Services = () => {
                 <motion.div 
                   key={index}
                   variants={itemVariants}
-                  whileHover={{ 
-                    y: -10, 
-                    scale: 1.03,
-                    boxShadow: "0 20px 40px -5px rgba(0, 0, 0, 0.1), 0 10px 20px -5px rgba(0, 0, 0, 0.05)"
-                  }}
-                  className="relative bg-gradient-to-b from-white to-gray-50/50 p-8 rounded-[2rem] shadow-sm border border-white/50 backdrop-blur-sm flex flex-col items-start md:items-center text-left md:text-center group cursor-default transition-all duration-300"
+                  className="relative bg-white p-8 rounded-[2rem] shadow-sm border border-white/50 backdrop-blur-sm flex flex-col items-start md:items-center text-left md:text-center group cursor-default transition-all duration-300 card-transition card-hover glow-border"
                 >
                   {/* Subtle Glow Effect on Hover */}
                   <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                   
                   {/* Step Number Badge */}
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 relative z-10 bg-white shadow-sm border border-gray-100 group-hover:border-primary/20 transition-all duration-300 group-hover:scale-110 overflow-hidden">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-6 relative z-10 bg-white shadow-sm border border-gray-100 group-hover:border-primary/20 transition-all duration-300 overflow-hidden icon-hover">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <span className="text-xl font-bold text-primary group-hover:text-white relative z-10 transition-colors duration-300 font-serif">
                       {step.number}

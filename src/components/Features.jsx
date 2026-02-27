@@ -38,8 +38,8 @@ const Features = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {features.map((feature, index) => (
           <FadeIn key={index} delay={index * 0.1}>
-            <div className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 ease-out border border-gray-100 flex flex-col items-start md:items-center text-left md:text-center h-full group hover:scale-105">
-              <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center mb-6">
+            <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col items-start md:items-center text-left md:text-center h-full group card-transition card-hover glow-border">
+              <div className="w-16 h-16 bg-gray-50 rounded-xl flex items-center justify-center mb-6 icon-hover">
                 <feature.icon size={32} className="text-secondary" />
               </div>
               <h3 className="text-lg font-bold text-secondary mb-3">{feature.title}</h3>

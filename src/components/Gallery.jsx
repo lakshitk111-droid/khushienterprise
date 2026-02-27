@@ -63,27 +63,28 @@ const Gallery = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
           {instagramPosts.map((post, index) => (
             <FadeIn key={post.id} delay={index * 0.1}>
-              <motion.a 
+              <a 
                 href="https://www.instagram.com/khushienterprises241/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block relative aspect-square group overflow-hidden cursor-pointer rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5 }}
+                className="block relative aspect-square group cursor-pointer rounded-2xl shadow-sm card-transition card-hover glow-border spin-3d-container"
               >
-                <Image src={post.image} alt={post.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2">
-                  <Instagram className="text-white drop-shadow-lg" size={32} />
-                  <span className="text-white text-xs font-bold tracking-wider uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
-                    View Post
-                  </span>
+                <div className="w-full h-full spin-3d-content relative image-hover">
+                  <Image src={post.image} alt={post.alt} className="w-full h-full object-cover rounded-2xl" loading="lazy" />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-2 rounded-2xl">
+                    <Instagram className="text-white drop-shadow-lg" size={32} />
+                    <span className="text-white text-xs font-bold tracking-wider uppercase opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75">
+                      View Post
+                    </span>
+                  </div>
+                  
+                  {/* Corner Accent */}
+                  <div className="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="text-white/80" size={16} />
+                  </div>
                 </div>
-                
-                {/* Corner Accent */}
-                <div className="absolute top-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ExternalLink className="text-white/80" size={16} />
-                </div>
-              </motion.a>
+              </a>
             </FadeIn>
           ))}
         </div>
@@ -95,7 +96,7 @@ const Gallery = () => {
           variant="outline" 
           icon={Instagram} 
           iconPosition="left"
-          className="text-secondary border-gray-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm"
+          className="text-secondary border-gray-300 hover:bg-gradient-to-r hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 hover:text-white hover:border-transparent transition-all duration-300 shadow-sm btn-premium"
         >
           Follow on Instagram
         </Button>
