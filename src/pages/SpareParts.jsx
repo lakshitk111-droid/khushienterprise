@@ -13,57 +13,59 @@ import PatternBackground from '../components/ui/PatternBackground';
 import PageHero from '../components/PageHero';
 import CTASection from '../components/CTASection';
 import Image from '../components/ui/Image';
+import firstcard from '../assets/firstcard.png';
+import third from '../assets/third.png';
 
 const parts = [
   {
     id: 1,
     name: "MacBook Pro Retina Display Assembly",
     category: "Screen",
-    price: "$399.00",
+    price: "Demo Info Only",
     image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
     id: 2,
     name: "Dell XPS 15 Battery (97Wh)",
     category: "Battery",
-    price: "$129.00",
-    image: "https://images.unsplash.com/photo-1619551734325-81aaf323686c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    price: "Demo Info Only",
+    image: firstcard
   },
   {
     id: 3,
     name: "Samsung 1TB NVMe M.2 SSD",
     category: "Storage",
-    price: "$149.00",
-    image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+    price: "Demo Info Only",
+    image: third
   },
   {
     id: 4,
     name: "ThinkPad X1 Carbon Keyboard",
     category: "Keyboard",
-    price: "$89.00",
+    price: "Demo Info Only",
     image: "https://images.unsplash.com/photo-1587829741301-dc798b91add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
     id: 5,
     name: "DDR4 32GB RAM Kit (2x16GB)",
     category: "Memory",
-    price: "$119.00",
+    price: "Demo Info Only",
     image: "https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   },
   {
     id: 6,
     name: "Asus ROG Cooling Fan",
     category: "Cooling",
-    price: "$45.00",
+    price: "Demo Info Only",
     image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
   }
 ];
 
 const categories = [
   { name: "Screens", icon: Monitor, image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { name: "Batteries", icon: Battery, image: "https://images.unsplash.com/photo-1619551734325-81aaf323686c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { name: "Batteries", icon: Battery, image: firstcard },
   { name: "Keyboards", icon: Keyboard, image: "https://images.unsplash.com/photo-1587829741301-dc798b91add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { name: "Storage", icon: HardDrive, image: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { name: "Storage", icon: HardDrive, image: third },
   { name: "RAM", icon: Cpu, image: "https://images.unsplash.com/photo-1562976540-1502c2145186?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { name: "Cooling", icon: Fan, image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
 ];

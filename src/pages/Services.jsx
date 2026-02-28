@@ -21,49 +21,49 @@ const services = [
     icon: Monitor,
     title: "Screen Replacement",
     description: "Original quality displays for all major brands. Restores touch sensitivity and brightness.",
-    price: "From $99"
+    price: "Demo Info Only"
   },
   {
     icon: Battery,
     title: "Battery Replacement",
     description: "Get back to all-day battery life with our certified battery replacement service.",
-    price: "From $49"
+    price: "Demo Info Only"
   },
   {
     icon: Cpu,
     title: "Motherboard Repair",
     description: "Chip-level repairs for water damage, power issues, and logic board failures.",
-    price: "Custom Quote"
+    price: "Demo Info Only"
   },
   {
     icon: HardDrive,
     title: "Data Recovery",
     description: "Advanced recovery for crashed hard drives, SSDs, and accidental deletions.",
-    price: "From $149"
+    price: "Demo Info Only"
   },
   {
     icon: Wrench,
     title: "Keyboard Repair",
     description: "Fix sticky keys or replace entire keyboard modules for a smooth typing experience.",
-    price: "From $39"
+    price: "Demo Info Only"
   },
   {
     icon: Wifi,
     title: "Software & Network",
     description: "OS installation, virus removal, and driver optimization for peak performance.",
-    price: "From $29"
+    price: "Demo Info Only"
   },
   {
     icon: Server,
     title: "Desktop Services",
     description: "Complete desktop assembly, repair, upgrades, and maintenance for home and office PCs.",
-    price: "Custom Quote"
+    price: "Demo Info Only"
   },
   {
     icon: Printer,
     title: "Printer Services",
     description: "Expert repair for laser & inkjet printers, cartridge refilling, and driver installation.",
-    price: "From $39"
+    price: "Demo Info Only"
   }
 ];
 

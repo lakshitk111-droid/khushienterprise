@@ -1,8 +1,8 @@
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, Facebook, Instagram } from 'lucide-react';
 
 const TopBar = () => {
   return (
-    <div className="bg-secondary text-gray-300 py-2 text-xs md:text-sm hidden sm:block border-b border-gray-700">
+    <div className="bg-[#000080] text-white py-2 text-xs md:text-sm hidden sm:block border-b border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <div className="flex space-x-6">
           <div className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer">
@@ -18,15 +18,13 @@ const TopBar = () => {
             <a href="mailto:Khushienterprises241@gmail.com" className="font-medium tracking-wide">Khushienterprises241@gmail.com</a>
           </div>
         </div>
-        <div className="flex space-x-6">
-          <div className="flex items-center space-x-2 hidden lg:flex">
-            <Clock size={14} className="text-primary" />
-            <span>Mon - Sat: 10:00 AM - 8:00 PM</span>
-          </div>
-          <div className="flex items-center space-x-2">
-            <MapPin size={14} className="text-primary" />
-            <span>Serving Gurugram & Delhi NCR</span>
-          </div>
+        <div className="flex space-x-4">
+           <a href="https://www.facebook.com/share/1HmMTu5oiQ/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <Facebook size={16} />
+          </a>
+          <a href="https://www.instagram.com/khushienterprises241?igsh=a28wNXF5Y3VxYml4" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
+            <Instagram size={16} />
+          </a>
         </div>
       </div>
     </div>

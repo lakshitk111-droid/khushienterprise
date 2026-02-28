@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Instagram, Linkedin, ArrowRight, MapPin, Phone, Mail } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Phone, Mail, ArrowRight } from 'lucide-react';
 import Image from './ui/Image';
 import footerBg from '../assets/footer.jpg';
 import logobox from '../assets/logobox.jpg';
@@ -61,10 +61,8 @@ const Footer = () => {
               Restoring your digital companions with precision and care.
             </p>
             <div className="flex space-x-5 pt-2">
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Facebook size={18} /></a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Twitter size={18} /></a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Instagram size={18} /></a>
-              <a href="#" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Linkedin size={18} /></a>
+              <a href="https://www.facebook.com/share/1HmMTu5oiQ/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Facebook size={18} /></a>
+              <a href="https://www.instagram.com/khushienterprises241?igsh=a28wNXF5Y3VxYml4" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-primary transition-colors transform hover:-translate-y-1 duration-300"><Instagram size={18} /></a>
             </div>
           </div>
 

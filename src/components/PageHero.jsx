@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const PageHero = ({ title, subtitle, backgroundImage }) => {
   return (
-    <div className="relative h-[60vh] min-h-[500px] w-full flex items-center justify-center text-center overflow-hidden bg-gray-900">
+    <div className="relative h-[60vh] min-h-[420px] md:min-h-[500px] w-full flex items-center justify-center text-center overflow-hidden bg-gray-900">
       {/* Background Image - Applied via inline style for guaranteed render */}
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"

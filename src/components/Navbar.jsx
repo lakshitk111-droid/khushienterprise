@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, Mail, Instagram, Facebook } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import Button from './ui/Button';
 import Image from './ui/Image';
@@ -32,10 +32,48 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out ${
         scrolled 
-          ? 'bg-slate-900/80 backdrop-blur-md shadow-lg py-2' 
-          : 'bg-transparent shadow-none py-4'
+          ? 'bg-slate-900/80 backdrop-blur-md shadow-lg' 
+          : 'bg-transparent shadow-none'
       }`}
     >
+      <div className="w-full bg-[#FFD700] text-[#1a1a1a] text-xs md:text-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-9 sm:h-10 flex items-center justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-1">
+            <a href="tel:+919868022297" className="flex items-center space-x-2 hover:opacity-90 transition-opacity font-medium">
+              <Phone size={14} className="text-[#0B1B5E]" />
+              <span className="tracking-wide">+91 98680 22297</span>
+            </a>
+            <a href="tel:+919810776852" className="flex items-center space-x-2 hover:opacity-90 transition-opacity font-medium">
+              <Phone size={14} className="text-[#0B1B5E]" />
+              <span className="tracking-wide">+91 98107 76852</span>
+            </a>
+            <a href="mailto:Khushienterprises241@gmail.com" className="hidden sm:flex items-center space-x-2 hover:opacity-90 transition-opacity font-medium">
+              <Mail size={14} className="text-[#0B1B5E]" />
+              <span className="tracking-wide">Khushienterprises241@gmail.com</span>
+            </a>
+          </div>
+          <div className="flex items-center space-x-4">
+            <a
+              href="https://www.facebook.com/share/1HmMTu5oiQ/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:opacity-90 transition-opacity text-[#0B1B5E]"
+            >
+              <Facebook size={16} />
+            </a>
+            <a
+              href="https://www.instagram.com/khushienterprises241?igsh=a28wNXF5Y3VxYml4"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:opacity-90 transition-opacity text-[#0B1B5E]"
+            >
+              <Instagram size={16} />
+            </a>
+          </div>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -53,7 +91,7 @@ const Navbar = () => {
             <Image 
               src={logotext} 
               alt="Khushi Enterprises" 
-              className="h-8 md:h-10 w-auto object-contain"
+              className="h-8 md:h-10 w-auto object-contain hidden sm:block"
             />
           </Link>
 
@@ -92,7 +130,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-md transition-colors ${

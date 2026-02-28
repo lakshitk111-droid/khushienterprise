@@ -272,10 +272,10 @@ const HeroScroll = () => {
               <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 backdrop-blur-md text-white/80 text-xs md:text-sm uppercase tracking-widest">
                 Premium Repair Services
               </div>
-              <h1 className="text-5xl md:text-8xl font-bold text-white mb-6 tracking-tighter drop-shadow-2xl">
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 tracking-tighter drop-shadow-2xl">
                 Khushi <span className="text-primary">Enterprises</span>
               </h1>
-              <p className="text-xl md:text-3xl text-gray-200 font-light tracking-wide max-w-3xl">
+              <p className="text-lg sm:text-2xl md:text-3xl text-gray-200 font-light tracking-wide max-w-3xl">
                 Expert Laptop Repair & Advanced Diagnostics
               </p>
             </motion.div>
@@ -286,9 +286,9 @@ const HeroScroll = () => {
               className="absolute left-4 md:left-20 top-1/2 -translate-y-1/2 max-w-xl text-left"
             >
               <div className="text-primary font-mono text-sm md:text-base mb-2">PRECISION ENGINEERING</div>
-              <h2 className="text-4xl md:text-7xl font-bold text-white mb-4 leading-tight">
+              <h2 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 leading-tight">
                 Chip-Level
-                <span className="block text-3xl md:text-5xl text-gray-400 mt-2 font-normal">Mastery</span>
+                <span className="block text-2xl sm:text-4xl md:text-5xl text-gray-400 mt-2 font-normal">Mastery</span>
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed border-l-2 border-primary pl-4">
                 Advanced motherboard diagnostics and component-level repairs. We fix what others can't.
@@ -316,7 +316,7 @@ const HeroScroll = () => {
               style={{ opacity: opacityCTA, scale: scaleCTA }} 
               className="absolute inset-x-0 bottom-32 flex flex-col items-start md:items-center justify-center text-left md:text-center pointer-events-auto px-4 md:px-0"
             >
-              <h2 className="text-3xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+              <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
                 Ready to Restore Your Device?
               </h2>
               <p className="text-lg text-gray-300 mb-8 max-w-2xl">
