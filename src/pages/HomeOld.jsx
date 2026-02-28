@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Wrench, ShieldCheck, Clock, CheckCircle, Activity, Zap, PenTool } from 'lucide-react';
+import { ArrowRight, Wrench, ShieldCheck, Clock, CheckCircle, Activity, Zap, PenTool, Printer, Server } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -82,6 +82,20 @@ const Home = () => {
             description="Quick turnaround times for most repairs, so you can get back to work without delay."
             delay={0.6}
             floatDelay="delay-2000"
+          />
+          <ServiceCard 
+            icon={Server} 
+            title="Desktop Support" 
+            description="Complete desktop assembly, repair, upgrades, and maintenance for home and office PCs."
+            delay={0.8}
+            floatDelay=""
+          />
+          <ServiceCard 
+            icon={Printer} 
+            title="Printer Services" 
+            description="Expert repair for laser & inkjet printers, cartridge refilling, and driver installation."
+            delay={1.0}
+            floatDelay="delay-1000"
           />
         </div>
       </SectionWrapper>

@@ -7,7 +7,11 @@ const TopBar = () => {
         <div className="flex space-x-6">
           <div className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer">
             <Phone size={14} className="text-primary" />
-            <a href="tel:+919868022297" className="font-medium tracking-wide">+91 98680 22297</a>
+            <div className="flex flex-col sm:flex-row sm:space-x-2">
+              <a href="tel:+919868022297" className="font-medium tracking-wide">+91 98680 22297</a>
+              <span className="hidden sm:inline">|</span>
+              <a href="tel:+919810776852" className="font-medium tracking-wide">+91 98107 76852</a>
+            </div>
           </div>
           <div className="flex items-center space-x-2 hover:text-primary transition-colors cursor-pointer hidden md:flex">
             <Mail size={14} className="text-primary" />

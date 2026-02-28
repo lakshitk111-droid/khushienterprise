@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { 
-  Wrench, Battery, Monitor, Cpu, HardDrive, Wifi, 
+  Wrench, Battery, Monitor, Cpu, HardDrive, Wifi, Printer, Server,
   Award, ShieldCheck, Clock, DollarSign, ArrowRight, CheckCircle 
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
@@ -52,6 +52,18 @@ const services = [
     title: "Software & Network",
     description: "OS installation, virus removal, and driver optimization for peak performance.",
     price: "From $29"
+  },
+  {
+    icon: Server,
+    title: "Desktop Services",
+    description: "Complete desktop assembly, repair, upgrades, and maintenance for home and office PCs.",
+    price: "Custom Quote"
+  },
+  {
+    icon: Printer,
+    title: "Printer Services",
+    description: "Expert repair for laser & inkjet printers, cartridge refilling, and driver installation.",
+    price: "From $39"
   }
 ];
 

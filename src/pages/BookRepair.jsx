@@ -234,7 +234,10 @@ const BookRepair = () => {
                   <div>
                     <h4 className="font-bold text-secondary">Call Us Directly</h4>
                     <p className="text-gray-500 text-sm mb-1">For urgent repairs or queries.</p>
-                    <a href="tel:+919868022297" className="text-primary font-bold">+91 98680 22297</a>
+                    <div className="flex flex-col">
+                      <a href="tel:+919868022297" className="text-primary font-bold">+91 98680 22297</a>
+                      <a href="tel:+919810776852" className="text-primary font-bold">+91 98107 76852</a>
+                    </div>
                   </div>
                 </div>
               </form>

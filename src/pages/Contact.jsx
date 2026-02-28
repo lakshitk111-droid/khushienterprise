@@ -76,6 +76,7 @@ const Contact = () => {
             content={
               <>
                 <p>+91 98680 22297</p>
+                <p>+91 98107 76852</p>
               </>
             }
           />
@@ -126,7 +127,8 @@ const Contact = () => {
                     <h4 className="font-bold text-lg mb-1">Phone Number</h4>
                     <p className="text-gray-400 text-sm">
                       Call for immediate assistance. <br/>
-                      <a href="tel:+919868022297" className="hover:text-white transition-colors">+91 98680 22297</a>
+                      <a href="tel:+919868022297" className="hover:text-white transition-colors">+91 98680 22297</a> <br/>
+                      <a href="tel:+919810776852" className="hover:text-white transition-colors">+91 98107 76852</a>
                     </p>
                   </div>
                 </div>

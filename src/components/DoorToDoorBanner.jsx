@@ -56,9 +56,14 @@ const DoorToDoorBanner = () => {
             <Button href="/book-repair" variant="primary" size="lg" icon={Calendar} className="btn-premium">
               Book Door-to-Door Repair
             </Button>
-            <Button href="tel:+919868022297" variant="outline" size="lg" icon={Phone} className="btn-premium">
-              Call Now
-            </Button>
+            <div className="flex flex-col gap-2">
+              <Button href="tel:+919868022297" variant="outline" size="lg" icon={Phone} className="btn-premium">
+                Call +91 98680 22297
+              </Button>
+              <Button href="tel:+919810776852" variant="outline" size="lg" icon={Phone} className="btn-premium">
+                Call +91 98107 76852
+              </Button>
+            </div>
           </div>
         </FadeIn>
 
